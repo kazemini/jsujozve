@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('college_university_professor', function (Blueprint $table) {
             $table->id();
             $table->foreignId('professor_id')->constrained()->onUpdate('cascade')->onDelete('restrict');
-            $table->foreignId('college_university_id')->constrained()->onUpdate('cascade')->onDelete('restrict');
+            $table->foreignId('college_university_id')->references('id')->on('college_university')->onUpdate('cascade')->onDelete('restrict');
             $table->timestamps();
         });
     }

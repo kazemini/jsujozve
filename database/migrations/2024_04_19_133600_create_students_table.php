@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('image',1000);
-            $table->foreignId('college_university_id')->constrained()->onUpdate('cascade')->onDelete('restrict');
+            $table->foreignId('college_university_id')->references('id')->on('college_university')->onUpdate('cascade')->onDelete('restrict');
             $table->timestamps();
         });
     }
