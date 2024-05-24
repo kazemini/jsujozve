@@ -30,7 +30,6 @@
                                         </span>
                                         @enderror
                                     </div>
-
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="form-label">ایمیل</label>
                                         <input name="email" type="email" class="form-control @error('email') is-invalid @enderror">
