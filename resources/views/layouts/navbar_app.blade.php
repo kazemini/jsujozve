@@ -65,7 +65,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{{route('user.logout')}}">
+                            <a class="nav-link text-white" href="{{route('profile.logout')}}">
                                 <i class="fa-duotone fa-door-open"></i>
                                 <span class="sidenav-normal  ms-3  ps-1"> خروج از سیستم </span>
                             </a>
