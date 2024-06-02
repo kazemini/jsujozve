@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -12,7 +11,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
-Route::get('/logout', [UserController::class, 'logout'])->name('user.logout');
+Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+Route::get('/logout', [ProfileController::class, 'logout'])->name('profile.logout');
 
 Route::get('/test', function (){
     return view('overview');
