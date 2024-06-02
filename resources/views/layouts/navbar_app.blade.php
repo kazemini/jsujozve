@@ -59,22 +59,17 @@
                 <div class="collapse show" id="ProfileNav" style="">
                     <ul class="nav">
                         <li class="nav-item">
-                            <a class="nav-link text-white active" href="profile/overview.html">
+                            <a class="nav-link text-white active" href="{{route('profile')}}">
                                 <i class="fa-duotone fa-user-hair"></i>
                                 <span class="sidenav-normal  ms-3  ps-1"> حساب کاربری </span>
                             </a>
                         </li>
-                        <form id="form-logout" method="post" action="{{route('user.logout')}}">
-                            @csrf
-                            @method('post')
-
-                            <li class="nav-item">
-                                <a type="submit" class="nav-link text-white" onclick="document.getElementById('form-logout').submit()">
-                                    <i class="fa-duotone fa-door-open"></i>
-                                    <span class="sidenav-normal  ms-3  ps-1"> خروج از سیستم </span>
-                                </a>
-                            </li>
-                        </form>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{{route('user.logout')}}">
+                                <i class="fa-duotone fa-door-open"></i>
+                                <span class="sidenav-normal  ms-3  ps-1"> خروج از سیستم </span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </li>
