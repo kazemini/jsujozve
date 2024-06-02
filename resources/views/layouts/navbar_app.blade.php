@@ -64,12 +64,17 @@
                                 <span class="sidenav-normal  ms-3  ps-1"> حساب کاربری </span>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="account/settings.html">
-                                <i class="fa-duotone fa-door-open"></i>
-                                <span class="sidenav-normal  ms-3  ps-1"> خروج از سیستم </span>
-                            </a>
-                        </li>
+                        <form id="form-logout" method="post" action="{{route('user.logout')}}">
+                            @csrf
+                            @method('post')
+
+                            <li class="nav-item">
+                                <a type="submit" class="nav-link text-white" onclick="document.getElementById('form-logout').submit()">
+                                    <i class="fa-duotone fa-door-open"></i>
+                                    <span class="sidenav-normal  ms-3  ps-1"> خروج از سیستم </span>
+                                </a>
+                            </li>
+                        </form>
                     </ul>
                 </div>
             </li>
