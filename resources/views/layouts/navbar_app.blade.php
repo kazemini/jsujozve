@@ -44,36 +44,30 @@
            aria-hidden="true" id="iconSidenav"></i>
         <a class="navbar-brand m-0" href="../dashboards/analytics-1.html" target="_blank">
             <img src="../../assets/img/logo-ct.png" class="navbar-brand-img h-100" alt="main_logo">
-            <span class="me-1 font-weight-bold text-white">Material Dashboard 2 PRO</span>
+            <span class="me-1 font-weight-bold text-white">{{config('app.name')}}</span>
         </a>
     </div>
     <hr class="horizontal light mt-0 mb-2">
     <div class="collapse navbar-collapse px-0 w-auto h-auto" id="sidenav-collapse-main">
         <ul class="navbar-nav">
             <li class="nav-item mb-2 mt-0">
-                <a data-bs-toggle="collapse" href="#ProfileNav" class="nav-link text-white" aria-controls="ProfileNav"
+                <a data-bs-toggle="collapse" href="#ProfileNav" class="nav-link text-white active" aria-controls="ProfileNav"
                    role="button" aria-expanded="false">
                     <img src="../../assets/img/team-3.jpg" class="avatar">
-                    <span class="nav-link-text ms-2 ps-1">Brooklyn Alice</span>
+                    <span class="nav-link-text ms-2 ps-1">{{auth()->user()->name}}</span>
                 </a>
-                <div class="collapse" id="ProfileNav" style="">
-                    <ul class="nav ">
+                <div class="collapse show" id="ProfileNav" style="">
+                    <ul class="nav">
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="profile/overview.html">
-                                <span class="sidenav-mini-icon"> MP </span>
-                                <span class="sidenav-normal  ms-3  ps-1"> My Profile </span>
+                            <a class="nav-link text-white active" href="profile/overview.html">
+                                <i class="fa-duotone fa-user-hair"></i>
+                                <span class="sidenav-normal  ms-3  ps-1"> حساب کاربری </span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white " href="account/settings.html">
-                                <span class="sidenav-mini-icon"> S </span>
-                                <span class="sidenav-normal  ms-3  ps-1"> Settings </span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white " href="../authentication/signin/basic.html">
-                                <span class="sidenav-mini-icon"> L </span>
-                                <span class="sidenav-normal  ms-3  ps-1"> Logout </span>
+                            <a class="nav-link text-white" href="account/settings.html">
+                                <i class="fa-duotone fa-door-open"></i>
+                                <span class="sidenav-normal  ms-3  ps-1"> خروج از سیستم </span>
                             </a>
                         </li>
                     </ul>
@@ -81,62 +75,21 @@
             </li>
             <hr class="horizontal light mt-0">
             <li class="nav-item">
-                <a data-bs-toggle="collapse" href="#dashboardsExamples" class="nav-link text-white "
-                   aria-controls="dashboardsExamples" role="button" aria-expanded="false">
-                    <i class="material-icons-round opacity-10">dashboard</i>
-                    <span class="nav-link-text me-1">Dashboards</span>
-                </a>
-                <div class="collapse " id="dashboardsExamples">
-                    <ul class="nav  pe-0 ">
-                        <li class="nav-item ">
-                            <a class="nav-link text-white " href="../dashboards/analytics-1.html">
-                                <span class="sidenav-mini-icon"> A </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Analytics </span>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-white " href="../dashboards/discover.html">
-                                <span class="sidenav-mini-icon"> D </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Discover </span>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-white " href="../dashboards/sales.html">
-                                <span class="sidenav-mini-icon"> S </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Sales </span>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-white " href="../dashboards/automotive.html">
-                                <span class="sidenav-mini-icon"> A </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Automotive </span>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-white " href="../dashboards/smart-home.html">
-                                <span class="sidenav-mini-icon"> S </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Smart Home </span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li class="nav-item mt-3">
-                <h6 class="ps-4 me-4 text-uppercase text-xs font-weight-bolder text-white">PAGES</h6>
+                <h6 class="ps-4 me-4 text-uppercase text-lg font-weight-bolder text-white">جزوه‌</h6>
             </li>
             <li class="nav-item">
-                <a data-bs-toggle="collapse" href="#pagesExamples" class="nav-link text-white active"
+                <a data-bs-toggle="collapse" href="#pagesExamples" class="nav-link text-white"
                    aria-controls="pagesExamples" role="button" aria-expanded="false">
-                    <i class="material-icons-round {% if page.brand == 'RTL' %}ms-2{% else %} me-2{% endif %}">image</i>
-                    <span class="nav-link-text me-1">Pages</span>
+                    <i class="fa-duotone fa-folder-tree {% if page.brand == 'RTL' %}ms-2{% else %} me-2{% endif %}"></i>
+                    <span class="nav-link-text me-1">مدیریت جزوه‌ها</span>
                 </a>
-                <div class="collapse  show " id="pagesExamples">
+                <div class="collapse " id="pagesExamples">
                     <ul class="nav  pe-0 ">
                         <li class="nav-item ">
                             <a class="nav-link text-white " data-bs-toggle="collapse" aria-expanded="false"
                                href="#profileExample">
-                                <span class="sidenav-mini-icon"> P </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Profile <b class="caret"></b></span>
+                                <span class="sidenav-mini-icon"> J </span>
+                                <span class="sidenav-normal  me-3  ps-1"> جزوه‌های من <b class="caret"></b></span>
                             </a>
                             <div class="collapse " id="profileExample">
                                 <ul class="nav nav-sm flex-column">
@@ -314,7 +267,7 @@
                 <a data-bs-toggle="collapse" href="#applicationsExamples" class="nav-link text-white "
                    aria-controls="applicationsExamples" role="button" aria-expanded="false">
                     <i class="material-icons-round {% if page.brand == 'RTL' %}ms-2{% else %} me-2{% endif %}">apps</i>
-                    <span class="nav-link-text me-1">Applications</span>
+                    <span class="nav-link-text me-1">جزوه‌های پسند شده</span>
                 </a>
                 <div class="collapse " id="applicationsExamples">
                     <ul class="nav  pe-0 ">
@@ -367,7 +320,7 @@
                 <a data-bs-toggle="collapse" href="#ecommerceExamples" class="nav-link text-white "
                    aria-controls="ecommerceExamples" role="button" aria-expanded="false">
                     <i class="material-icons-round {% if page.brand == 'RTL' %}ms-2{% else %} me-2{% endif %}">shopping_basket</i>
-                    <span class="nav-link-text me-1">Ecommerce</span>
+                    <span class="nav-link-text me-1">تاریخچه ویرایش</span>
                 </a>
                 <div class="collapse " id="ecommerceExamples">
                     <ul class="nav  pe-0 ">
@@ -439,200 +392,14 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a data-bs-toggle="collapse" href="#authExamples" class="nav-link text-white "
-                   aria-controls="authExamples" role="button" aria-expanded="false">
-                    <i class="material-icons-round {% if page.brand == 'RTL' %}ms-2{% else %} me-2{% endif %}">content_paste</i>
-                    <span class="nav-link-text me-1">Authentication</span>
-                </a>
-                <div class="collapse " id="authExamples">
-                    <ul class="nav  pe-0 ">
-                        <li class="nav-item ">
-                            <a class="nav-link text-white " data-bs-toggle="collapse" aria-expanded="false"
-                               href="#signinExample">
-                                <span class="sidenav-mini-icon"> S </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Sign In <b class="caret"></b></span>
-                            </a>
-                            <div class="collapse " id="signinExample">
-                                <ul class="nav nav-sm flex-column">
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white " href="../authentication/signin/basic.html">
-                                            <span class="sidenav-mini-icon"> B </span>
-                                            <span class="sidenav-normal  me-3  ps-1"> Basic </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white " href="../authentication/signin/cover.html">
-                                            <span class="sidenav-mini-icon"> C </span>
-                                            <span class="sidenav-normal  me-3  ps-1"> Cover </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white "
-                                           href="../authentication/signin/illustration.html">
-                                            <span class="sidenav-mini-icon"> I </span>
-                                            <span class="sidenav-normal  me-3  ps-1"> Illustration </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-white " data-bs-toggle="collapse" aria-expanded="false"
-                               href="#signupExample">
-                                <span class="sidenav-mini-icon"> S </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Sign Up <b class="caret"></b></span>
-                            </a>
-                            <div class="collapse " id="signupExample">
-                                <ul class="nav nav-sm flex-column">
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white " href="../authentication/signup/basic.html">
-                                            <span class="sidenav-mini-icon"> B </span>
-                                            <span class="sidenav-normal  me-3  ps-1"> Basic </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white " href="../authentication/signup/cover.html">
-                                            <span class="sidenav-mini-icon"> C </span>
-                                            <span class="sidenav-normal  me-3  ps-1"> Cover </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white "
-                                           href="../authentication/signup/illustration.html">
-                                            <span class="sidenav-mini-icon"> I </span>
-                                            <span class="sidenav-normal  me-3  ps-1"> Illustration </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-white " data-bs-toggle="collapse" aria-expanded="false"
-                               href="#resetExample">
-                                <span class="sidenav-mini-icon"> R </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Reset Password <b class="caret"></b></span>
-                            </a>
-                            <div class="collapse " id="resetExample">
-                                <ul class="nav nav-sm flex-column">
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white " href="../authentication/reset/basic.html">
-                                            <span class="sidenav-mini-icon"> B </span>
-                                            <span class="sidenav-normal  me-3  ps-1"> Basic </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white " href="../authentication/reset/cover.html">
-                                            <span class="sidenav-mini-icon"> C </span>
-                                            <span class="sidenav-normal  me-3  ps-1"> Cover </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white "
-                                           href="../authentication/reset/illustration.html">
-                                            <span class="sidenav-mini-icon"> I </span>
-                                            <span class="sidenav-normal  me-3  ps-1"> Illustration </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-white " data-bs-toggle="collapse" aria-expanded="false"
-                               href="#lockExample">
-                                <span class="sidenav-mini-icon"> L </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Lock <b class="caret"></b></span>
-                            </a>
-                            <div class="collapse " id="lockExample">
-                                <ul class="nav nav-sm flex-column">
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white " href="../authentication/lock/basic.html">
-                                            <span class="sidenav-mini-icon"> B </span>
-                                            <span class="sidenav-normal  me-3  ps-1"> Basic </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white " href="../authentication/lock/cover.html">
-                                            <span class="sidenav-mini-icon"> C </span>
-                                            <span class="sidenav-normal  me-3  ps-1"> Cover </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white " href="../authentication/lock/illustration.html">
-                                            <span class="sidenav-mini-icon"> I </span>
-                                            <span class="sidenav-normal  me-3  ps-1"> Illustration </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-white " data-bs-toggle="collapse" aria-expanded="false"
-                               href="#StepExample">
-                                <span class="sidenav-mini-icon"> 2 </span>
-                                <span class="sidenav-normal  me-3  ps-1"> 2-Step Verification <b
-                                        class="caret"></b></span>
-                            </a>
-                            <div class="collapse " id="StepExample">
-                                <ul class="nav nav-sm flex-column">
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white "
-                                           href="../authentication/verification/basic.html">
-                                            <span class="sidenav-mini-icon"> B </span>
-                                            <span class="sidenav-normal  me-3  ps-1"> Basic </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white "
-                                           href="../authentication/verification/cover.html">
-                                            <span class="sidenav-mini-icon"> C </span>
-                                            <span class="sidenav-normal  me-3  ps-1"> Cover </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white "
-                                           href="../authentication/verification/illustration.html">
-                                            <span class="sidenav-mini-icon"> I </span>
-                                            <span class="sidenav-normal  me-3  ps-1"> Illustration </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-white " data-bs-toggle="collapse" aria-expanded="false"
-                               href="#errorExample">
-                                <span class="sidenav-mini-icon"> E </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Error <b class="caret"></b></span>
-                            </a>
-                            <div class="collapse " id="errorExample">
-                                <ul class="nav nav-sm flex-column">
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white " href="../authentication/error/404.html">
-                                            <span class="sidenav-mini-icon"> E </span>
-                                            <span class="sidenav-normal  me-3  ps-1"> Error 404 </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white " href="../authentication/error/500.html">
-                                            <span class="sidenav-mini-icon"> E </span>
-                                            <span class="sidenav-normal  me-3  ps-1"> Error 500 </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li class="nav-item">
                 <hr class="horizontal light">
-                <h6 class="ps-4 me-4 text-uppercase text-xs font-weight-bolder text-white">DOCS</h6>
+                <h6 class="ps-4 me-4 text-uppercase text-lg font-weight-bolder text-white">انجمن</h6>
             </li>
             <li class="nav-item">
                 <a data-bs-toggle="collapse" href="#basicExamples" class="nav-link text-white "
                    aria-controls="basicExamples" role="button" aria-expanded="false">
                     <i class="material-icons-round {% if page.brand == 'RTL' %}ms-2{% else %} me-2{% endif %}">upcoming</i>
-                    <span class="nav-link-text me-1">Basic</span>
+                    <span class="nav-link-text me-1">مدیریت انجمن‌ها</span>
                 </a>
                 <div class="collapse " id="basicExamples">
                     <ul class="nav  pe-0 ">
@@ -729,7 +496,7 @@
                 <a data-bs-toggle="collapse" href="#componentsExamples" class="nav-link text-white "
                    aria-controls="componentsExamples" role="button" aria-expanded="false">
                     <i class="material-icons-round {% if page.brand == 'RTL' %}ms-2{% else %} me-2{% endif %}">view_in_ar</i>
-                    <span class="nav-link-text me-1">Components</span>
+                    <span class="nav-link-text me-1">انجمن‌های دنبال شده</span>
                 </a>
                 <div class="collapse " id="componentsExamples">
                     <ul class="nav  pe-0 ">
@@ -877,7 +644,7 @@
                    href="https://github.com/creativetimofficial/ct-material-dashboard-pro/blob/master/CHANGELOG.md"
                    target="_blank">
                     <i class="material-icons-round {% if page.brand == 'RTL' %}ms-2{% else %} me-2{% endif %}">receipt_long</i>
-                    <span class="nav-link-text me-1">Changelog</span>
+                    <span class="nav-link-text me-1">کاوش در پست‌ها</span>
                 </a>
             </li>
         </ul>
