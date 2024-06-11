@@ -15,8 +15,9 @@ Auth::routes();
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
 Route::get('/logout', [ProfileController::class, 'logout'])->name('profile.logout');
-Route::get('/create_document',[CreateDocumentController::class,'index'])->name('document.create');
-Route::get('/manage_document',[DocumentManagementController::class,'index'])->name('document.management');
+Route::get('/document',[CreateDocumentController::class,'index'])->name('document.index');
+Route::post('/document/create',[CreateDocumentController::class,'create'])->name('document.create');
+Route::get('/document/manage',[DocumentManagementController::class,'index'])->name('document.management');
 Route::get('/test', function (){
     return view('overview');
 })->name('test');
