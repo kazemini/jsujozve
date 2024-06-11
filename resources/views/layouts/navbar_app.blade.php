@@ -51,14 +51,14 @@
     <div class="collapse navbar-collapse px-0 w-auto h-auto" id="sidenav-collapse-main">
         <ul class="navbar-nav">
             <li class="nav-item mb-2 mt-0">
-                <a data-bs-toggle="collapse" href="#ProfileNav" class="nav-link text-white active" aria-controls="ProfileNav"
+                <a data-bs-toggle="collapse" href="#ProfileNav" class="nav-link text-white" aria-controls="ProfileNav"
                    role="button" aria-expanded="false">
                     <span class="nav-link-text ms-2 ps-1">{{auth()->user()->name}}</span>
                 </a>
                 <div class="collapse show" id="ProfileNav" style="">
                     <ul class="nav">
                         <li class="nav-item">
-                            <a class="nav-link text-white active" href="{{route('profile')}}">
+                            <a class="nav-link text-white" href="{{route('profile')}}">
                                 <i class="fa-duotone fa-user-hair"></i>
                                 <span class="sidenav-normal ms-2 ps-1"> حساب کاربری </span>
                             </a>
@@ -77,8 +77,7 @@
                 <h6 class="ps-4 me-4 text-uppercase text-lg font-weight-bolder text-white">جزوه‌</h6>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white"
-                   href="{{route('document.create')}}">
+                <a class="nav-link text-white" href="{{route('document.index')}}">
                     <i class="sidenav-mini-icon fa-duotone fa-file-circle-plus"></i>
                     <span class="sidenav-normal me-1">ایجاد جزوه جدید<b class="caret"></b></span>
                 </a>
@@ -522,5 +521,10 @@
 
 <script
     src="{{url('assets/js/material-dashboard.min.js?v=3.0.6')}}"></script>
+
+<script>
+    document.querySelector('#sidenav-collapse-main a[href="{{ request()->url() }}"]').parentElement.parentElement.parentElement.parentElement.firstElementChild.classList.add('active');
+    document.querySelector('#sidenav-collapse-main a[href="{{ request()->url() }}"]').classList.add('active');
+</script>
 </body>
 </html>
