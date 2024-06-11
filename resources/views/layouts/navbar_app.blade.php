@@ -53,7 +53,6 @@
             <li class="nav-item mb-2 mt-0">
                 <a data-bs-toggle="collapse" href="#ProfileNav" class="nav-link text-white active" aria-controls="ProfileNav"
                    role="button" aria-expanded="false">
-                    <img src="../../assets/img/team-3.jpg" class="avatar">
                     <span class="nav-link-text ms-2 ps-1">{{auth()->user()->name}}</span>
                 </a>
                 <div class="collapse show" id="ProfileNav" style="">
@@ -61,7 +60,7 @@
                         <li class="nav-item">
                             <a class="nav-link text-white active" href="{{route('profile')}}">
                                 <i class="fa-duotone fa-user-hair"></i>
-                                <span class="sidenav-normal  ms-3  ps-1"> حساب کاربری </span>
+                                <span class="sidenav-normal ms-2 ps-1"> حساب کاربری </span>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -84,37 +83,29 @@
                     <span class="nav-link-text me-1">مدیریت جزوه‌ها</span>
                 </a>
                 <div class="collapse " id="pagesExamples">
-                    <ul class="nav  pe-0 ">
-                        <li class="nav-item ">
-                            <a class="nav-link text-white " data-bs-toggle="collapse" aria-expanded="false"
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link text-white"
                                href="#profileExample">
-                                <span class="sidenav-mini-icon"> J </span>
-                                <span class="sidenav-normal  me-3  ps-1"> جزوه‌های من <b class="caret"></b></span>
+                                <i class="sidenav-mini-icon fa-duotone fa-file-circle-plus"></i>
+                                <span class="sidenav-normal me-3  ps-1"> ایجاد جزوه جدید <b class="caret"></b></span>
                             </a>
-                            <div class="collapse " id="profileExample">
-                                <ul class="nav nav-sm flex-column">
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white " href="profile/overview.html">
-                                            <span class="sidenav-mini-icon"> P </span>
-                                            <span class="sidenav-normal  me-3  ps-1"> Profile Overview </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white " href="profile/projects.html">
-                                            <span class="sidenav-mini-icon"> A </span>
-                                            <span class="sidenav-normal  me-3  ps-1"> All Projects </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white " href="profile/messages.html">
-                                            <span class="sidenav-mini-icon"> M </span>
-                                            <span class="sidenav-normal  me-3  ps-1"> Messages </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
                         </li>
-                        <li class="nav-item ">
+                        <li class="nav-item">
+                            <a class="nav-link text-white"
+                               href="#profileExample">
+                                <i class="sidenav-mini-icon fa-duotone fa-file-circle-question"></i>
+                                <span class="sidenav-normal me-3  ps-1"> ویرایش جزوه ها <b class="caret"></b></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white"
+                               href="#profileExample">
+                                <i class="sidenav-mini-icon fa-duotone fa-file-circle-minus"></i>
+                                <span class="sidenav-normal me-3  ps-1"> حذف جزوه <b class="caret"></b></span>
+                            </a>
+                        </li>
+                     <!--    <li class="nav-item ">
                             <a class="nav-link text-white " data-bs-toggle="collapse" aria-expanded="false"
                                href="#usersExample">
                                 <span class="sidenav-mini-icon"> U </span>
@@ -259,137 +250,27 @@
                                 <span class="sidenav-mini-icon"> N </span>
                                 <span class="sidenav-normal  me-3  ps-1"> Notifications </span>
                             </a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </li>
             <li class="nav-item">
-                <a data-bs-toggle="collapse" href="#applicationsExamples" class="nav-link text-white "
-                   aria-controls="applicationsExamples" role="button" aria-expanded="false">
-                    <i class="material-icons-round {% if page.brand == 'RTL' %}ms-2{% else %} me-2{% endif %}">apps</i>
-                    <span class="nav-link-text me-1">جزوه‌های پسند شده</span>
+                <a href="#applicationsExamples" class="nav-link text-white">
+                    <i class="fa-duotone fa-thumbs-up"></i>
+                    <span class="nav-link-text me-1">جزوه‌های پسندیده شده</span>
                 </a>
-                <div class="collapse " id="applicationsExamples">
-                    <ul class="nav  pe-0 ">
-                        <li class="nav-item ">
-                            <a class="nav-link text-white " href="../applications/crm.html">
-                                <span class="sidenav-mini-icon"> C </span>
-                                <span class="sidenav-normal  me-3  ps-1"> CRM </span>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-white " href="../applications/kanban.html">
-                                <span class="sidenav-mini-icon"> K </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Kanban </span>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-white " href="../applications/wizard.html">
-                                <span class="sidenav-mini-icon"> W </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Wizard </span>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-white " href="../applications/datatables.html">
-                                <span class="sidenav-mini-icon"> D </span>
-                                <span class="sidenav-normal  me-3  ps-1"> DataTables </span>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-white " href="../applications/calendar.html">
-                                <span class="sidenav-mini-icon"> C </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Calendar </span>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-white " href="../applications/stats.html">
-                                <span class="sidenav-mini-icon"> S </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Stats </span>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-white " href="../applications/validation.html">
-                                <span class="sidenav-mini-icon"> V </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Validation </span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
             </li>
             <li class="nav-item">
-                <a data-bs-toggle="collapse" href="#ecommerceExamples" class="nav-link text-white "
-                   aria-controls="ecommerceExamples" role="button" aria-expanded="false">
-                    <i class="material-icons-round {% if page.brand == 'RTL' %}ms-2{% else %} me-2{% endif %}">shopping_basket</i>
+                <a href="#ecommerceExamples" class="nav-link text-white">
+                    <i class="fa-duotone fa-timeline-arrow"></i>
                     <span class="nav-link-text me-1">تاریخچه ویرایش</span>
                 </a>
-                <div class="collapse " id="ecommerceExamples">
-                    <ul class="nav  pe-0 ">
-                        <li class="nav-item ">
-                            <a class="nav-link text-white " data-bs-toggle="collapse" aria-expanded="false"
-                               href="#productsExample">
-                                <span class="sidenav-mini-icon"> P </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Products <b class="caret"></b></span>
-                            </a>
-                            <div class="collapse " id="productsExample">
-                                <ul class="nav nav-sm flex-column">
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white " href="../ecommerce/products/new-product.html">
-                                            <span class="sidenav-mini-icon"> N </span>
-                                            <span class="sidenav-normal  me-3  ps-1"> New Product </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white " href="../ecommerce/products/edit-product.html">
-                                            <span class="sidenav-mini-icon"> E </span>
-                                            <span class="sidenav-normal  me-3  ps-1"> Edit Product </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white " href="../ecommerce/products/product-page.html">
-                                            <span class="sidenav-mini-icon"> P </span>
-                                            <span class="sidenav-normal  me-3  ps-1"> Product Page </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white " href="../ecommerce/products/products-list.html">
-                                            <span class="sidenav-mini-icon"> P </span>
-                                            <span class="sidenav-normal  me-3  ps-1"> Products List </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-white " data-bs-toggle="collapse" aria-expanded="false"
-                               href="#ordersExample">
-                                <span class="sidenav-mini-icon"> O </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Orders <b class="caret"></b></span>
-                            </a>
-                            <div class="collapse " id="ordersExample">
-                                <ul class="nav nav-sm flex-column">
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white " href="../ecommerce/orders/list.html">
-                                            <span class="sidenav-mini-icon"> O </span>
-                                            <span class="sidenav-normal  me-3  ps-1"> Order List </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white " href="../ecommerce/orders/details.html">
-                                            <span class="sidenav-mini-icon"> O </span>
-                                            <span class="sidenav-normal  me-3  ps-1"> Order Details </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-white " href="../ecommerce/referral.html">
-                                <span class="sidenav-mini-icon"> R </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Referral </span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+            </li>
+            <li class="nav-item">
+                <a href="#ecommerceExamples" class="nav-link text-white">
+                    <i class="fa-duotone fa-file-magnifying-glass"></i>
+                    <span class="nav-link-text me-1">کاوش در جزوه‌ها</span>
+                </a>
             </li>
             <li class="nav-item">
                 <hr class="horizontal light">
@@ -643,7 +524,7 @@
                 <a class="nav-link"
                    href="https://github.com/creativetimofficial/ct-material-dashboard-pro/blob/master/CHANGELOG.md"
                    target="_blank">
-                    <i class="material-icons-round {% if page.brand == 'RTL' %}ms-2{% else %} me-2{% endif %}">receipt_long</i>
+                    <i class="fa-duotone fa-comments"></i>
                     <span class="nav-link-text me-1">کاوش در پست‌ها</span>
                 </a>
             </li>
