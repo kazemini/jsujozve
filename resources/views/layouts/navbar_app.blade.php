@@ -77,183 +77,20 @@
                 <h6 class="ps-4 me-4 text-uppercase text-lg font-weight-bolder text-white">جزوه‌</h6>
             </li>
             <li class="nav-item">
-                <a data-bs-toggle="collapse" href="#pagesExamples" class="nav-link text-white"
-                   aria-controls="pagesExamples" role="button" aria-expanded="false">
-                    <i class="fa-duotone fa-folder-tree {% if page.brand == 'RTL' %}ms-2{% else %} me-2{% endif %}"></i>
-                    <span class="nav-link-text me-1">مدیریت جزوه‌ها</span>
+                <a class="nav-link text-white"
+                   href="{{route('document.create')}}">
+                    <i class="sidenav-mini-icon fa-duotone fa-file-circle-plus"></i>
+                    <span class="sidenav-normal me-1">ایجاد جزوه جدید<b class="caret"></b></span>
                 </a>
-                <div class="collapse " id="pagesExamples">
-                    <ul class="nav">
-                        <li class="nav-item">
-                            <a class="nav-link text-white"
-                               href="#profileExample">
-                                <i class="sidenav-mini-icon fa-duotone fa-file-circle-plus"></i>
-                                <span class="sidenav-normal me-3  ps-1"> ایجاد جزوه جدید <b class="caret"></b></span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white"
-                               href="#profileExample">
-                                <i class="sidenav-mini-icon fa-duotone fa-file-circle-question"></i>
-                                <span class="sidenav-normal me-3  ps-1"> ویرایش جزوه ها <b class="caret"></b></span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white"
-                               href="#profileExample">
-                                <i class="sidenav-mini-icon fa-duotone fa-file-circle-minus"></i>
-                                <span class="sidenav-normal me-3  ps-1"> حذف جزوه <b class="caret"></b></span>
-                            </a>
-                        </li>
-                     <!--    <li class="nav-item ">
-                            <a class="nav-link text-white " data-bs-toggle="collapse" aria-expanded="false"
-                               href="#usersExample">
-                                <span class="sidenav-mini-icon"> U </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Users <b class="caret"></b></span>
-                            </a>
-                            <div class="collapse " id="usersExample">
-                                <ul class="nav nav-sm flex-column">
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white " href="users/reports.html">
-                                            <span class="sidenav-mini-icon"> R </span>
-                                            <span class="sidenav-normal  me-3  ps-1"> Reports </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white " href="users/new-user.html">
-                                            <span class="sidenav-mini-icon"> N </span>
-                                            <span class="sidenav-normal  me-3  ps-1"> New User </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-white " data-bs-toggle="collapse" aria-expanded="false"
-                               href="#accountExample">
-                                <span class="sidenav-mini-icon"> A </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Account <b class="caret"></b></span>
-                            </a>
-                            <div class="collapse " id="accountExample">
-                                <ul class="nav nav-sm flex-column">
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white " href="account/settings.html">
-                                            <span class="sidenav-mini-icon"> S </span>
-                                            <span class="sidenav-normal  me-3  ps-1"> Settings </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white " href="account/billing.html">
-                                            <span class="sidenav-mini-icon"> B </span>
-                                            <span class="sidenav-normal  me-3  ps-1"> Billing </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white " href="account/invoice.html">
-                                            <span class="sidenav-mini-icon"> I </span>
-                                            <span class="sidenav-normal  me-3  ps-1"> Invoice </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white " href="account/security.html">
-                                            <span class="sidenav-mini-icon"> S </span>
-                                            <span class="sidenav-normal  me-3  ps-1"> Security </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-white " data-bs-toggle="collapse" aria-expanded="false"
-                               href="#projectsExample">
-                                <span class="sidenav-mini-icon"> P </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Projects <b class="caret"></b></span>
-                            </a>
-                            <div class="collapse " id="projectsExample">
-                                <ul class="nav nav-sm flex-column">
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white " href="projects/general.html">
-                                            <span class="sidenav-mini-icon"> G </span>
-                                            <span class="sidenav-normal  me-3  ps-1"> General </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white " href="projects/timeline.html">
-                                            <span class="sidenav-mini-icon"> T </span>
-                                            <span class="sidenav-normal  me-3  ps-1"> Timeline </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white " href="projects/new-project.html">
-                                            <span class="sidenav-mini-icon"> N </span>
-                                            <span class="sidenav-normal  me-3  ps-1"> New Project </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-white " data-bs-toggle="collapse" aria-expanded="false"
-                               href="#vrExamples">
-                                <span class="sidenav-mini-icon"> V </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Virtual Reality <b class="caret"></b></span>
-                            </a>
-                            <div class="collapse " id="vrExamples">
-                                <ul class="nav nav-sm flex-column">
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white " href="vr/vr-default.html">
-                                            <span class="sidenav-mini-icon"> V </span>
-                                            <span class="sidenav-normal  me-3  ps-1"> VR Default </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white " href="vr/vr-info.html">
-                                            <span class="sidenav-mini-icon"> V </span>
-                                            <span class="sidenav-normal  me-3  ps-1"> VR Info </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-white " href="pricing-page.html">
-                                <span class="sidenav-mini-icon"> P </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Pricing Page </span>
-                            </a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link text-white active" href="rtl-page.html">
-                                <span class="sidenav-mini-icon"> R </span>
-                                <span class="sidenav-normal  me-3  ps-1"> RTL </span>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-white " href="widgets.html">
-                                <span class="sidenav-mini-icon"> W </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Widgets </span>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-white " href="charts.html">
-                                <span class="sidenav-mini-icon"> C </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Charts </span>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-white " href="sweet-alerts.html">
-                                <span class="sidenav-mini-icon"> S </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Sweet Alerts </span>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-white " href="notifications.html">
-                                <span class="sidenav-mini-icon"> N </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Notifications </span>
-                            </a>
-                        </li> -->
-                    </ul>
-                </div>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-white" href="{{route('document.management')}}">
+                    <i class="fa-duotone fa-chart-network"></i>
+                    <span class="sidenav-normal me-1"> مدیریت جزوه ها <b class="caret"></b></span>
+                </a>
+            </li>
+
             <li class="nav-item">
                 <a href="#applicationsExamples" class="nav-link text-white">
                     <i class="fa-duotone fa-thumbs-up"></i>
@@ -528,6 +365,15 @@
                     <span class="nav-link-text me-1">کاوش در پست‌ها</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <hr class="horizontal light">
+                <a class="nav-link"
+                   href="https://github.com/creativetimofficial/ct-material-dashboard-pro/blob/master/CHANGELOG.md"
+                   target="_blank">
+                    <i class="fa-duotone fa-gingerbread-man"></i>
+                    <span class="nav-link-text me-1">طراحی توسط علی کاظمینی</span>
+                </a>
+            </li>
         </ul>
     </div>
 </aside>
@@ -537,7 +383,7 @@
         <div class="container-fluid">
             <div class="row align-items-center justify-content-lg-between">
                 <div class="col-lg-6 mb-lg-0 mb-4">
-                    ایجاد شده توسط علی کاظمینی
+                   حق کپی رایت برای درس مباحث ویژه 2 محفوظ می باشد ;)
                 </div>
             </div>
         </div>
