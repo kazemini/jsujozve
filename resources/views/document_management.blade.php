@@ -38,6 +38,7 @@
                                     <th class="px-2">آخرین بروزرسانی</th>
                                     <th></th>
                                     <th></th>
+                                    <th></th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -53,6 +54,8 @@
                                         <td>{{$document->created_at}}</td>
                                         <td>
                                             <a href="{{route('document.edit',['document' => $document])}}"><button type="submit" class="btn btn-info mb-0">ویرایش</button></a>                                                    </td>
+                                        <td>
+                                            <a href="{{route('document.logs',['document' => $document])}}"><button type="submit" class="btn btn-secondary mb-0">تاریخچه</button></a>                                                    </td>
                                         <td>
                                             <form action="{{route('document.delete',['document'=>$document])}}" method="POST">
                                                 @csrf
