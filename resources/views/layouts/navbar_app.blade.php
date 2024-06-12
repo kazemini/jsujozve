@@ -97,13 +97,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#ecommerceExamples" class="nav-link text-white">
-                    <i class="fa-duotone fa-timeline-arrow"></i>
-                    <span class="nav-link-text me-1">تاریخچه ویرایش</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="#ecommerceExamples" class="nav-link text-white">
+                <a href="{{route('document.explore')}}" class="nav-link text-white">
                     <i class="fa-duotone fa-file-magnifying-glass"></i>
                     <span class="nav-link-text me-1">کاوش در جزوه‌ها</span>
                 </a>
