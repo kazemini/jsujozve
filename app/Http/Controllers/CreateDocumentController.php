@@ -18,7 +18,7 @@ class CreateDocumentController extends Controller
     public function create(Request $request)
     {
         $requestData = $request->all();
-        $fileName = $request->file('document')->getClientOriginalName() . '_' . time();
+        $fileName = time().'_'.$request->file('document')->getClientOriginalName();
 
         $path = $request->file('document')->storeAs('documents', $fileName, 'public');
         $newDoc = Document::create([
