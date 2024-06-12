@@ -378,10 +378,10 @@
 </aside>
 <div class="main-content position-relative max-height-vh-100 h-100">
     @yield('content')
-    <footer class="footer py-4  ">
+    <footer class="footer py-4 text-center">
         <div class="container-fluid">
             <div class="row align-items-center justify-content-lg-between">
-                <div class="col-lg-6 mb-lg-0 mb-4">
+                <div class="col-lg-12 mb-lg-0 mb-4">
                    حق کپی رایت برای درس مباحث ویژه 2 محفوظ می باشد ;)
                 </div>
             </div>
