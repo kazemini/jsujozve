@@ -21,4 +21,9 @@ class Document extends Model
     {
         return $this->hasMany(Log::class);
     }
+
+    public function publisher(): BelongsTo
+    {
+        return $this->belongsTo(User::class,'author_id');
+    }
 }
