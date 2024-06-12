@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Document;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use PhpParser\Comment\Doc;
 
 class DocumentManagementController extends Controller
@@ -30,8 +31,13 @@ class DocumentManagementController extends Controller
     public function update(Request $request, Document $document)
     {
 
-        if($request->newDocumnet != null) {
-            $document->download_link = $request->newDocumnet;
+        if($request->hasFile('newDocument')) {
+            $fileName = time().'_'.$request->file('newDocument')->getClientOriginalName();
+
+            Storage::disk('public')->delete($document->download_link);
+
+            $path = $request->file('newDocument')->storeAs('documents', $fileName, 'public');
+            $document->download_link = $path;
             $document->save();
         }
 
@@ -46,6 +52,15 @@ class DocumentManagementController extends Controller
         ]);
 
         return redirect()->route('document.management')->with(["status" => "با موفقیت ویرایش شد"]);
+    }
+
+    public function logs(Document $document)
+    {
+        return view('document_logs', ['document' => $document->load(
+            ['logs' => function ($query) {
+                $query->latest();
+            }]
+        )]);
     }
 
     public function destroy(Document $document)
