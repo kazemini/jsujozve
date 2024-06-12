@@ -70,7 +70,6 @@
                                     </form>
                                 </div>
                             </div>
-                            <hr class="vertical dark">
                         </div>
                     </div>
                 </div>
