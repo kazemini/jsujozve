@@ -26,58 +26,45 @@
                 <div class="row">
                     <div class="row mt-3">
                         <div class="col-12 col-md-12 col-xl-12 position-relative">
-                            <div class="card card-plain h-200">
-                                <div class="card-header pb-0 p-3">
-                                    <h4 class="mb-0">ویرایش اطلاعات کاربری</h4>
-                                    <br>
-                                    <form role="form" method="post" action="{{ route('profile.update') }}">
-                                        @csrf
-                                        @method('PATCH')
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="px-2">شناسه</th>
+                                    <th class="px-2">عنوان</th>
+                                    <th class="px-2">دانشگاه</th>
+                                    <th class="px-2">دانشکده</th>
+                                    <th class="px-2">درس</th>
+                                    <th class="px-2">استاد</th>
+                                    <th class="px-2">آخرین بروزرسانی</th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($documents as $document)
+                                    <tr>
+                                        @php $log = $document->logs->first() @endphp
+                                        <td> {{$document->id}} </td>
+                                        <td><a href=""></a>{{$log->title}}</td>
+                                        <td><a href=""></a>{{$log->university}}</td>
+                                        <td><a href=""></a>{{$log->department}}</td>
+                                        <td><a href=""></a>{{$log->lesson}}</td>
+                                        <td><a href=""></a>{{$log->professor}}</td>
+                                        <td>{{$document->created_at}}</td>
+                                        <td>
+                                            <a href=""><button type="submit" class="btn btn-info mb-0">ویرایش</button></a>                                                    </td>
+                                        <td>
+                                            <form action="" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger mb-0">حذف</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
 
-                                        <div class="input-group input-group-outline mb-3">
-                                            <label class="form-label">ایمیل</label>
-                                            <input name="email" type="email" disabled value="{{auth()->user()->email}}" class="form-control">
-                                            @error('email')
-                                            <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                            @enderror
-                                        </div>
-                                        <div class="input-group input-group-outline mb-3">
-                                            <label class="form-label">نام</label>
-                                            <input name="name" type="text" value="{{auth()->user()->name}}"
-                                                   class="form-control @error('name') is-invalid @enderror value="{{ old('name') }}">
-                                            @error('name')
-                                            <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                            @enderror
-                                        </div>
-
-                                        {{--                                        <div class="input-group input-group-outline mb-3">--}}
-                                        {{--                                            <label class="form-label">رمز عبور</label>--}}
-                                        {{--                                            <input name="password" type="password" autocomplete="new-password"--}}
-                                        {{--                                                   class="form-control @error('password') is-invalid @enderror">--}}
-                                        {{--                                            @error('password')--}}
-                                        {{--                                            <span class="invalid-feedback" role="alert">--}}
-                                        {{--                                            <strong>{{ $message }}</strong>--}}
-                                        {{--                                        </span>--}}
-                                        {{--                                            @enderror--}}
-                                        {{--                                        </div>--}}
-                                        {{--                                        <div class="input-group input-group-outline mb-3">--}}
-                                        {{--                                            <label class="form-label" autocomplete="new-password">تکرار رمز عبور</label>--}}
-                                        {{--                                            <input name="password_confirmation" type="password" class="form-control">--}}
-                                        {{--                                        </div>--}}
-                                        <div class="text-center">
-                                            <button type="submit"
-                                                    class="btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0">تغییر
-                                                اطلاعات
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                            <hr class="vertical dark">
                         </div>
                     </div>
                 </div>
