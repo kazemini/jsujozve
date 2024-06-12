@@ -8,7 +8,7 @@
             </div>
         @endif
 
-        <div class="container-fluid px-2 px-md-4">
+        <div class="container-fluid px-2 px-md-1">
             <div class="page-header min-height-200 border-radius-xl mt-4">
                 <span class="mask  bg-gradient-primary  opacity-6"></span>
             </div>
@@ -45,14 +45,14 @@
                                     <tr>
                                         @php $log = $document->logs->first() @endphp
                                         <td> {{$document->id}} </td>
-                                        <td><a href=""></a>{{$log->title}}</td>
-                                        <td><a href=""></a>{{$log->university}}</td>
-                                        <td><a href=""></a>{{$log->department}}</td>
-                                        <td><a href=""></a>{{$log->lesson}}</td>
-                                        <td><a href=""></a>{{$log->professor}}</td>
+                                        <td style="text-overflow: ellipsis;overflow: hidden; max-width: 200px"><a href=""></a>{{$log->title}}</td>
+                                        <td style="text-overflow: ellipsis;overflow: hidden; max-width: 120px"><a href=""></a>{{$log->university}}</td>
+                                        <td style="text-overflow: ellipsis;overflow: hidden; max-width: 120px"><a href=""></a>{{$log->department}}</td>
+                                        <td style="text-overflow: ellipsis;overflow: hidden; max-width: 120px"><a href=""></a>{{$log->lesson}}</td>
+                                        <td style="text-overflow: ellipsis;overflow: hidden; max-width: 150px"><a href=""></a>{{$log->professor}}</td>
                                         <td>{{$document->created_at}}</td>
                                         <td>
-                                            <a href=""><button type="submit" class="btn btn-info mb-0">ویرایش</button></a>                                                    </td>
+                                            <a href="{{route('document.edit',['document' => $document])}}"><button type="submit" class="btn btn-info mb-0">ویرایش</button></a>                                                    </td>
                                         <td>
                                             <form action="{{route('document.delete',['document'=>$document])}}" method="POST">
                                                 @csrf
