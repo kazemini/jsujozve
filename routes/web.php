@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CreateDocumentController;
+use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\DocumentManagementController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\CheckAuthor;
@@ -21,9 +22,12 @@ Route::get('/document', [CreateDocumentController::class, 'index'])->name('docum
 Route::post('/document/create', [CreateDocumentController::class, 'create'])->name('document.create')->middleware('auth');
 
 Route::get('/document/manage', [DocumentManagementController::class, 'index'])->name('document.management')->middleware('auth');
-Route::get('/document/{document}', [DocumentManagementController::class, 'edit'])->name('document.edit')->middleware(['auth', 'can:manage-document,document']);
+Route::get('/document/{document}/edit', [DocumentManagementController::class, 'edit'])->name('document.edit')->middleware(['auth', 'can:manage-document,document']);
 Route::post('/document/{document}', [DocumentManagementController::class, 'update'])->name('document.update')->middleware(['auth', 'can:manage-document,document']);
 Route::delete('/document/{document}', [DocumentManagementController::class, 'destroy'])->name('document.delete')->middleware(['auth', 'can:manage-document,document']);
+Route::get('/document/logs/{document}', [DocumentManagementController::class, 'logs'])->name('document.logs')->middleware(['auth']);
+
+Route::get('/document/explore', [DocumentController::class, 'index'])->name('document.explore');
 
 Route::get('/test', function () {
     return view('overview');
