@@ -16,10 +16,15 @@ Auth::routes();
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile')->middleware('auth');
 Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update')->middleware('auth');
 Route::get('/logout', [ProfileController::class, 'logout'])->name('profile.logout')->middleware('auth');
+
 Route::get('/document', [CreateDocumentController::class, 'index'])->name('document.index')->middleware('auth');
 Route::post('/document/create', [CreateDocumentController::class, 'create'])->name('document.create')->middleware('auth');
+
 Route::get('/document/manage', [DocumentManagementController::class, 'index'])->name('document.management')->middleware('auth');
-Route::delete('/document/{document}', [DocumentManagementController::class, 'destroy'])->name('document.delete')->middleware('auth', CheckAuthor::class);
+Route::get('/document/{document}', [DocumentManagementController::class, 'edit'])->name('document.edit')->middleware(['auth', 'can:manage-document,document']);
+Route::post('/document/{document}', [DocumentManagementController::class, 'update'])->name('document.update')->middleware(['auth', 'can:manage-document,document']);
+Route::delete('/document/{document}', [DocumentManagementController::class, 'destroy'])->name('document.delete')->middleware(['auth', 'can:manage-document,document']);
+
 Route::get('/test', function () {
     return view('overview');
 })->name('test');
