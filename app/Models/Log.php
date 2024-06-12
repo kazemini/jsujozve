@@ -25,4 +25,9 @@ class Log extends Model
     {
         return $this->belongsTo(Document::class);
     }
+
+    public function editor(): BelongsTo
+    {
+        return $this->belongsTo(User::class,'editor_id');
+    }
 }
