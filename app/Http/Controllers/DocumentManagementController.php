@@ -14,6 +14,6 @@ class DocumentManagementController extends Controller
             ['logs' => function ($query) {
                 $query->latest('created_at')->take(1);
             }]
-        )->get()]);
+        )->where('author_id',auth()->user()->id)->get()]);
     }
 }
