@@ -54,7 +54,7 @@
                                         <td>
                                             <a href=""><button type="submit" class="btn btn-info mb-0">ویرایش</button></a>                                                    </td>
                                         <td>
-                                            <form action="" method="POST">
+                                            <form action="{{route('document.delete',['document'=>$document])}}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger mb-0">حذف</button>
