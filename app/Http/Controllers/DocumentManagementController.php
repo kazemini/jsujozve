@@ -14,6 +14,12 @@ class DocumentManagementController extends Controller
             ['logs' => function ($query) {
                 $query->latest('created_at')->take(1);
             }]
-        )->where('author_id',auth()->user()->id)->get()]);
+        )->where('author_id', auth()->user()->id)->get()]);
+    }
+
+    public function destroy(Document $document)
+    {
+        $document->delete();
+        return redirect()->back()->with(["status" => "با موفقیت حذف شد"]);
     }
 }
