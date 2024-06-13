@@ -28,6 +28,7 @@ Route::delete('/document/{document}', [DocumentManagementController::class, 'des
 Route::get('/document/logs/{document}', [DocumentManagementController::class, 'logs'])->name('document.logs')->middleware(['auth']);
 
 Route::get('/document/explore', [DocumentController::class, 'index'])->name('document.explore');
+Route::post('/document/{document}/like', [DocumentController::class, 'like'])->name('document.like')->middleware('auth');
 
 Route::get('/test', function () {
     return view('overview');
