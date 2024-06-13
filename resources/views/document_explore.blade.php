@@ -41,6 +41,7 @@
                                     <th></th>
                                     <th></th>
                                     <th></th>
+                                    <th></th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -55,7 +56,7 @@
                                                 href=""></a>{{$publisher->name}}</td>
                                         <td style="text-overflow: ellipsis;overflow: hidden; max-width: 200px"><a
                                                 href=""></a>{{$editor->name}}</td>
-                                        <td style="text-overflow: ellipsis;overflow: hidden; max-width: 200px"><a
+                                        <td style="text-overflow: ellipsis;overflow: hidden; max-width: 160px"><a
                                                 href=""></a>{{$log->title}}</td>
                                         <td style="text-overflow: ellipsis;overflow: hidden; max-width: 120px"><a
                                                 href=""></a>{{$log->university}}</td>
@@ -66,6 +67,12 @@
                                         <td style="text-overflow: ellipsis;overflow: hidden; max-width: 150px"><a
                                                 href=""></a>{{$log->professor}}</td>
                                         <td>{{$log->created_at->format('m/d/Y')}}</td>
+                                        <td>
+                                            <a href="{{route('document.public-edit',['document'=>$document])}}">
+                                                <i class="text-2xl fa-duotone fa-file-pen text-warning">
+                                                </i>
+                                            </a>
+                                        </td>
                                         <td>
                                             <i class="text-2xl fa-duotone fa-subtitles text-info" data-bs-toggle=modal
                                                data-bs-target="#exampleModal{{$log->id}}">
@@ -122,6 +129,7 @@
                         </div>
                     </div>
                 </div>
+                <div style="language: en; direction: ltr">{{$documents->links()}}</div>
             </div>
         </div>
     </div>
