@@ -29,6 +29,9 @@ Route::get('/document/logs/{document}', [DocumentManagementController::class, 'l
 
 Route::get('/document/explore', [DocumentController::class, 'index'])->name('document.explore');
 Route::post('/document/{document}/like', [DocumentController::class, 'like'])->name('document.like')->middleware('auth');
+Route::get('/document/{document}/public-edit', [DocumentController::class, 'edit'])->name('document.public-edit')->middleware(['auth', 'can:manage-document,document']);
+Route::post('/document/{document}/public-update', [DocumentController::class, 'update'])->name('document.public-update')->middleware(['auth']);
+
 
 Route::get('/test', function () {
     return view('overview');
