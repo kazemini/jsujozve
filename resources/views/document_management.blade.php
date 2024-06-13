@@ -80,10 +80,10 @@
                                 @endforeach
                                 </tbody>
                             </table>
-
                         </div>
                     </div>
                 </div>
+                <div style="language: en; direction: ltr">{{$documents->links()}}</div>
             </div>
         </div>
     </div>
