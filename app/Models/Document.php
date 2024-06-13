@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Document extends Model
 {
@@ -25,5 +26,15 @@ class Document extends Model
     public function publisher(): BelongsTo
     {
         return $this->belongsTo(User::class,'author_id');
+    }
+
+    public function likes(): HasMany
+    {
+        return $this->hasMany(Like::class);
+    }
+
+    public function liked(): HasMany
+    {
+        return $this->hasMany(Like::class)->where( 'user_id',auth()->user()->id)->take(1);
     }
 }
