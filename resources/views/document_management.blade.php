@@ -73,7 +73,7 @@
                                                   method="POST">
                                                 @csrf
                                                 @method('DELETE')
-                                                <i class="text-2xl fa-duotone fa-shredder text-danger" onclick="event.preventDefault();this.closest('form').submit();"></i>
+                                                <i class="text-2xl fa-duotone fa-shredder text-danger cursor-pointer" onclick="event.preventDefault();this.closest('form').submit();"></i>
                                             </form>
                                         </td>
                                     </tr>
