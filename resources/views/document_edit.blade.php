@@ -26,7 +26,6 @@
                             <div class="card card-plain h-200">
                                 <div class="card-header pb-0 p-3">
                                     <h4 class="mb-0">اطلاعات کلی</h4>
-                                    <h4 class="mb-0">{{$document->logs->first()->title}}</h4>
                                     <br>
                                     <form role="form" method="post" enctype="multipart/form-data"
                                           action="{{route('document.update',['document'=>$document])}}">
