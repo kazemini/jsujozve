@@ -39,21 +39,24 @@
                                     <th class="px-2">آخرین بروزرسانی</th>
                                     <th></th>
                                     <th></th>
+                                    <th></th>
+                                    <th></th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($documents as $document)
                                     @php
-                                    $log = $document->logs->first();
-                                    $publisher = $document->publisher;
-                                    $editor = $log->editor;
+                                        $log = $document->logs->first();
+                                        $publisher = $document->publisher;
+                                        $editor = $log->editor;
                                     @endphp
                                     <tr>
                                         <td style="text-overflow: ellipsis;overflow: hidden; max-width: 200px"><a
                                                 href=""></a>{{$publisher->name}}</td>
                                         <td style="text-overflow: ellipsis;overflow: hidden; max-width: 200px"><a
                                                 href=""></a>{{$editor->name}}</td>
-                                        <td style="text-overflow: ellipsis;overflow: hidden; max-width: 200px"><a href=""></a>{{$log->title}}</td>
+                                        <td style="text-overflow: ellipsis;overflow: hidden; max-width: 200px"><a
+                                                href=""></a>{{$log->title}}</td>
                                         <td style="text-overflow: ellipsis;overflow: hidden; max-width: 120px"><a
                                                 href=""></a>{{$log->university}}</td>
                                         <td style="text-overflow: ellipsis;overflow: hidden; max-width: 120px"><a
@@ -62,18 +65,34 @@
                                                 href=""></a>{{$log->lesson}}</td>
                                         <td style="text-overflow: ellipsis;overflow: hidden; max-width: 150px"><a
                                                 href=""></a>{{$log->professor}}</td>
-                                        <td>{{$log->created_at}}</td>
+                                        <td>{{$log->created_at->format('m/d/Y')}}</td>
                                         <td>
-                                            <button type="submit" class="btn btn-secondary mb-0" data-bs-toggle=modal
-                                                    data-bs-target="#exampleModal{{$log->id}}">
-                                                توضیحات
-                                            </button>
+                                            <i class="text-2xl fa-duotone fa-subtitles text-info" data-bs-toggle=modal
+                                               data-bs-target="#exampleModal{{$log->id}}">
+                                            </i>
                                         </td>
                                         <td>
-                                            <a href="{{ Storage::url($document->download_link) }}" class="btn btn-outline-primary mb-0">
-                                                دانلود
+                                            <a href="{{ Storage::url($document->download_link)}}">
+                                                <i class="text-2xl fa-duotone fa-download text-success">
+                                                </i>
                                             </a>
                                         </td>
+                                        <td>
+                                            <form method="post"
+                                                  action="{{route('document.like',['document'=>$document])}}">
+                                                @csrf
+                                                @method('POST')
+                                                <i class="text-2xl fa-duotone fa-thumbs-up
+                                                 @if($document->liked->isNotEmpty())
+                                                   text-danger
+                                                 @else
+                                                   text-secondary
+                                                @endif "
+                                                   onclick="event.preventDefault();this.closest('form').submit();"></i>
+                                            </form>
+                                        </td>
+                                        <td style="text-overflow: ellipsis;overflow: hidden; max-width: 150px"><a
+                                                href=""></a>{{$document->likes->count()}}</td>
                                         <div class="modal fade" id="exampleModal{{$log->id}}"
                                              data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
                                              aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -89,7 +108,8 @@
                                                         </p>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">متوجه شدم
+                                                        <button type="button" class="btn btn-primary"
+                                                                data-bs-dismiss="modal">متوجه شدم
                                                         </button>
                                                     </div>
                                                 </div>
