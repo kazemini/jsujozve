@@ -17,4 +17,20 @@ class DocumentController extends Controller
         )->get()
         ]);
     }
+
+    public function like(Document $document)
+    {
+        $like = Like::where('user_id', auth()->user()->id)->where('document_id', $document->id)->get();
+
+        if ($like->isEmpty()) {
+            Like::create([
+                'user_id' => auth()->user()->id,
+                'document_id' => $document->id,
+            ]);
+        } else {
+            $like->first()->delete();
+        }
+
+        return redirect()->back();
+    }
 }
