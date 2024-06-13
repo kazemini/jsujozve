@@ -59,10 +59,9 @@
                                                 href=""></a>{{$log->professor}}</td>
                                         <td>{{$log->created_at}}</td>
                                         <td>
-                                            <button type="submit" class="btn btn-secondary mb-0" data-bs-toggle=modal
+                                            <i type="submit" class="text-2xl fa-duotone fa-subtitles text-info" data-bs-toggle=modal
                                                     data-bs-target="#exampleModal{{$log->id}}">
-                                                توضیحات
-                                            </button>
+                                            </i>
 
                                             <!-- Modal -->
                                         </td>
