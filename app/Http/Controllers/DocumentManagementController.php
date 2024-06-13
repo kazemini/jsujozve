@@ -16,7 +16,7 @@ class DocumentManagementController extends Controller
             ['logs' => function ($query) {
                 $query->latest('created_at')->take(1);
             }]
-        )->where('author_id', auth()->user()->id)->get()]);
+        )->where('author_id', auth()->user()->id)->simplePaginate(10)]);
     }
 
     public function edit(Document $document)
@@ -58,7 +58,7 @@ class DocumentManagementController extends Controller
     {
         return view('document_logs', ['document' => $document->load(
             ['logs' => function ($query) {
-                $query->latest();
+                $query->latest()->simplePaginate();
             }]
         )]);
     }
