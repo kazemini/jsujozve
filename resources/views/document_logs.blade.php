@@ -41,7 +41,6 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @php $logs = $document->logs@endphp
                                 @foreach($logs as $log)
                                     @php $editor = $log->editor @endphp
                                     <tr>
@@ -95,6 +94,7 @@
                         </div>
                     </div>
                 </div>
+                <div style="language: en; direction: ltr">{{$logs->links()}}</div>
             </div>
         </div>
     </div>

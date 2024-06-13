@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Document;
+use App\Models\Log;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use PhpParser\Comment\Doc;
@@ -31,8 +32,8 @@ class DocumentManagementController extends Controller
     public function update(Request $request, Document $document)
     {
 
-        if($request->hasFile('newDocument')) {
-            $fileName = time().'_'.$request->file('newDocument')->getClientOriginalName();
+        if ($request->hasFile('newDocument')) {
+            $fileName = time() . '_' . $request->file('newDocument')->getClientOriginalName();
 
             Storage::disk('public')->delete($document->download_link);
 
@@ -56,11 +57,9 @@ class DocumentManagementController extends Controller
 
     public function logs(Document $document)
     {
-        return view('document_logs', ['document' => $document->load(
-            ['logs' => function ($query) {
-                $query->latest()->simplePaginate();
-            }]
-        )]);
+        return view('document_logs', [
+            'logs' => Log::where('document_id', $document->id)->latest()->simplePaginate(10),
+        ]);
     }
 
     public function destroy(Document $document)
