@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Document;
+use App\Models\Like;
 use Illuminate\Http\Request;
 
 class DocumentController extends Controller
@@ -13,8 +14,8 @@ class DocumentController extends Controller
         return view('document_explore', ['documents' => Document::with(
             ['logs' => function ($query) {
                 $query->latest('created_at')->take(1);
-            }]
-        )->get()
+            }, 'liked']
+        )->withCount('likes')->get()
         ]);
     }
 
