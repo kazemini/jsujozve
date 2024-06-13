@@ -46,21 +46,34 @@
                                     <tr>
                                         @php $log = $document->logs->first() @endphp
                                         <td> {{$document->id}} </td>
-                                        <td style="text-overflow: ellipsis;overflow: hidden; max-width: 200px"><a href=""></a>{{$log->title}}</td>
-                                        <td style="text-overflow: ellipsis;overflow: hidden; max-width: 120px"><a href=""></a>{{$log->university}}</td>
-                                        <td style="text-overflow: ellipsis;overflow: hidden; max-width: 120px"><a href=""></a>{{$log->department}}</td>
-                                        <td style="text-overflow: ellipsis;overflow: hidden; max-width: 120px"><a href=""></a>{{$log->lesson}}</td>
-                                        <td style="text-overflow: ellipsis;overflow: hidden; max-width: 150px"><a href=""></a>{{$log->professor}}</td>
+                                        <td style="text-overflow: ellipsis;overflow: hidden; max-width: 200px"><a
+                                                href=""></a>{{$log->title}}</td>
+                                        <td style="text-overflow: ellipsis;overflow: hidden; max-width: 120px"><a
+                                                href=""></a>{{$log->university}}</td>
+                                        <td style="text-overflow: ellipsis;overflow: hidden; max-width: 120px"><a
+                                                href=""></a>{{$log->department}}</td>
+                                        <td style="text-overflow: ellipsis;overflow: hidden; max-width: 120px"><a
+                                                href=""></a>{{$log->lesson}}</td>
+                                        <td style="text-overflow: ellipsis;overflow: hidden; max-width: 150px"><a
+                                                href=""></a>{{$log->professor}}</td>
                                         <td>{{$document->created_at}}</td>
                                         <td>
-                                            <a href="{{route('document.edit',['document' => $document])}}"><button type="submit" class="btn btn-info mb-0">ویرایش</button></a>                                                    </td>
+                                            <a href="{{route('document.edit',['document' => $document])}}">
+                                                <i class="text-2xl fa-duotone fa-file-pen text-warning">
+                                                </i>
+                                            </a>
+                                        </td>
                                         <td>
-                                            <a href="{{route('document.logs',['document' => $document])}}"><button type="submit" class="btn btn-secondary mb-0">تاریخچه</button></a>                                                    </td>
+                                            <a href="{{route('document.logs',['document' => $document])}}">
+                                                <i class="text-2xl fa-duotone fa-history text-info"></i>
+                                            </a>
+                                        </td>
                                         <td>
-                                            <form action="{{route('document.delete',['document'=>$document])}}" method="POST">
+                                            <form action="{{route('document.delete',['document'=>$document])}}"
+                                                  method="POST">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-danger mb-0">حذف</button>
+                                                <i class="text-2xl fa-duotone fa-shredder text-danger" onclick="event.preventDefault();this.closest('form').submit();"></i>
                                             </form>
                                         </td>
                                     </tr>
