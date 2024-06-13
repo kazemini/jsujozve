@@ -15,7 +15,7 @@ class DocumentController extends Controller
             ['logs' => function ($query) {
                 $query->latest('created_at')->take(1);
             }, 'liked']
-        )->withCount('likes')->get()
+        )->withCount('likes')->simplePaginate(10)
         ]);
     }
 
