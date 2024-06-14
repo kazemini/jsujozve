@@ -8,6 +8,7 @@ use App\Models\Log;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use PhpParser\Comment\Doc;
+use function PHPUnit\Framework\isNull;
 
 class DocumentManagementController extends Controller
 {
@@ -31,6 +32,15 @@ class DocumentManagementController extends Controller
 
     public function update(Request $request, Document $document)
     {
+        $validated = $request->validate([
+            'newTitle' => 'required|string|min:3|max:100',
+            'newDescription' => 'max:1000',
+            'newUniversity' => 'required|string|min:2|max:100',
+            'newDepartment' => 'required|string|min:2|max:100',
+            'newProfessor' => 'required|string|min:3|max:100',
+            'newLesson' => 'required|string|min:3|max:100',
+            "newDocument" => 'mimes:pdf|max:20000',
+        ]);
 
         if ($request->hasFile('newDocument')) {
             $fileName = time() . '_' . $request->file('newDocument')->getClientOriginalName();
@@ -42,15 +52,20 @@ class DocumentManagementController extends Controller
             $document->save();
         }
 
-        $document->logs()->create([
+        $fields = [
             'title' => $request['newTitle'],
-            'description' => $request['newDescription'],
             'university' => $request['newUniversity'],
             'department' => $request['newDepartment'],
             'professor' => $request['newProfessor'],
             'lesson' => $request['newLesson'],
             'editor_id' => $document->author_id,
-        ]);
+        ];
+
+        if (!isNull($request['description'])) {
+            $fields['description'] = $request['newDescription'];
+        }
+
+        $document->logs()->create($fields);
 
         return redirect()->route('document.management')->with(["status" => "با موفقیت ویرایش شد"]);
     }
