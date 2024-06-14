@@ -40,33 +40,37 @@
                                             <input id="title" name="newTitle" type="text" value="{{$log->title}}"
                                                    class="form-control">
                                         </div>
+                                        <p class="text-danger">{{$errors->missing('newTitle') ? '' : 'عنوان اجباری است. حداقل 3، حداکثر 100 حرف'}}</p>
                                         <div class="input-group input-group-outline mb-3">
                                             <label class="form-label">دانشگاه</label>
                                             <input id="university" name="newUniversity" type="text"
                                                    value="{{$log->university}}" class="form-control">
                                         </div>
+                                        <p class="text-danger">{{$errors->missing('newUniversity') ? '' : 'نام دانشگاه اجباری است. حداقل 2، حداکثر 100 حرف'}}</p>
                                         <div class="input-group input-group-outline mb-3">
                                             <label class="form-label">دانشکده</label>
                                             <input id="department" name="newDepartment" type="text"
                                                    value="{{$log->department}}" class="form-control">
                                         </div>
+                                        <p class="text-danger">{{$errors->missing('newDepartment') ? '' : 'نام دانشکده اجباری است. حداقل 2، حداکثر 100 حرف'}}</p>
                                         <div class="input-group input-group-outline mb-3">
                                             <label class="form-label">استاد</label>
                                             <input id="professor" name="newProfessor" type="text"
                                                    value="{{$log->professor}}" class="form-control">
                                         </div>
+                                        <p class="text-danger">{{$errors->missing('newProfessor') ? '' : 'نام استاد اجباری است. حداقل 3، حداکثر 100 حرف'}}</p>
                                         <div class="input-group input-group-outline mb-3">
                                             <label class="form-label">درس</label>
                                             <input id="lesson" name="newLesson" type="text" value="{{$log->lesson}}"
                                                    class="form-control">
                                         </div>
+                                        <p class="text-danger">{{$errors->missing('newLesson') ? '' : 'نام درس اجباری است. حداقل 3، حداکثر 100 حرف'}}</p>
                                         <div class="input-group input-group-outline input-group-dynamic mb-3">
                                             <textarea id="description" name="newDescription" class="form-control"
                                                       placeholder="توضیحات بیشتر"
                                                       rows="3">{{$log->description}}</textarea>
                                         </div>
-
-
+                                        <p class="text-danger">{{$errors->missing('newDescription') ? '' : 'توضیحات بیشتر اختیاری است. حداکثر 1000 حرف'}}</p>
                                         <div class="text-center">
                                             <button type="submit"
                                                     class="btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0">

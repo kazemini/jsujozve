@@ -46,15 +46,29 @@ class DocumentController extends Controller
 
     public function update(Request $request, Document $document)
     {
-        $document->logs()->create([
+        $validated = $request->validate([
+            'newTitle' => 'required|string|min:3|max:100',
+            'newDescription' => 'max:1000',
+            'newUniversity' => 'required|string|min:2|max:100',
+            'newDepartment' => 'required|string|min:2|max:100',
+            'newProfessor' => 'required|string|min:3|max:100',
+            'newLesson' => 'required|string|min:3|max:100',
+        ]);
+
+        $fields = [
             'title' => $request['newTitle'],
-            'description' => $request['newDescription'],
             'university' => $request['newUniversity'],
             'department' => $request['newDepartment'],
             'professor' => $request['newProfessor'],
             'lesson' => $request['newLesson'],
             'editor_id' => auth()->user()->id,
-        ]);
+        ];
+
+        if (!empty($request['newDescription'])) {
+            $fields['description'] = $request['newDescription'];
+        }
+
+        $document->logs()->create([$fields]);
 
         return redirect()->route('document.explore')->with(["status" => "با موفقیت ویرایش شد"]);
     }
