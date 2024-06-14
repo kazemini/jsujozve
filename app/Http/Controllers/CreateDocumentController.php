@@ -31,7 +31,7 @@ class CreateDocumentController extends Controller
         ]);
 
         $requestData = $request->all();
-        $fileName = time().'_'.$request->file('document')->getClientOriginalName();
+        $fileName = time() . '_' . $request->file('document')->getClientOriginalName();
 
         $path = $request->file('document')->storeAs('documents', $fileName, 'public');
         $newDoc = Document::create([
@@ -39,7 +39,7 @@ class CreateDocumentController extends Controller
             'author_id' => auth()->user()->id,
         ]);
 
-$fields =  [
+        $fields = [
             'title' => $requestData['title'],
             'university' => $requestData['university'],
             'department' => $requestData['department'],
@@ -48,12 +48,12 @@ $fields =  [
             'editor_id' => $newDoc->author_id,
         ];
 
-        if(!isNull($requestData['description'])) {
+        if (!isNull($requestData['description'])) {
             $fields['description'] = $requestData['description'];
         }
 
         $newDoc->logs()->create($fields);
 
-        return redirect()->back()->with('status','با موفقیت ایجاد شد ;)');
+        return redirect()->back()->with('status', 'با موفقیت ایجاد شد ;)');
     }
 }
