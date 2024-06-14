@@ -74,7 +74,7 @@
                                             </a>
                                         </td>
                                         <td>
-                                            <i class="text-2xl fa-duotone fa-subtitles text-info" data-bs-toggle=modal
+                                            <i class="text-2xl fa-duotone fa-subtitles text-info cursor-pointer" data-bs-toggle=modal
                                                data-bs-target="#exampleModal{{$log->id}}">
                                             </i>
                                         </td>
@@ -89,7 +89,7 @@
                                                   action="{{route('document.like',['document'=>$document])}}">
                                                 @csrf
                                                 @method('POST')
-                                                <i class="text-2xl fa-duotone fa-thumbs-up
+                                                <i class="text-2xl fa-duotone fa-thumbs-up cursor-pointer
                                                  @if($document->liked->isNotEmpty())
                                                    text-danger
                                                  @else
