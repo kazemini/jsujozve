@@ -66,7 +66,7 @@
                                                 href=""></a>{{$log->lesson}}</td>
                                         <td style="text-overflow: ellipsis;overflow: hidden; max-width: 150px"><a
                                                 href=""></a>{{$log->professor}}</td>
-                                        <td>{{$log->created_at->format('m/d/Y')}}</td>
+                                        <td>{{$log->created_at->toJalali()->format('Y/m/d')}}</td>
                                         <td>
                                             <a href="{{route('document.public-edit',['document'=>$document])}}">
                                                 <i class="text-2xl fa-duotone fa-file-pen text-warning">

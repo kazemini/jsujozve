@@ -57,7 +57,7 @@
                                                 href=""></a>{{$log->lesson}}</td>
                                         <td style="text-overflow: ellipsis;overflow: hidden; max-width: 150px"><a
                                                 href=""></a>{{$log->professor}}</td>
-                                        <td>{{$log->created_at}}</td>
+                                        <td>{{$log->created_at->toJalali()}}</td>
                                         <td>
                                             <i type="submit" class="text-2xl fa-duotone fa-subtitles text-info" data-bs-toggle=modal
                                                     data-bs-target="#exampleModal{{$log->id}}">
