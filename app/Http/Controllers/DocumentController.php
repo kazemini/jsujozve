@@ -35,6 +35,21 @@ class DocumentController extends Controller
         return redirect()->back();
     }
 
+    public function bookmarks()
+    {
+        return view('bookmarks', [
+                'documents' => Document::whereHas(
+                    'likes', function ($query) {
+                    $query->where('user_id', auth()->user()->id);
+                })->with([
+                    'logs' => function ($query) {
+                        $query->latest('created_at')->take(1);
+                    }
+                ])->simplePaginate(10)
+            ]
+        );
+    }
+
     public function edit(Document $document)
     {
         return view('document_public_edit', ['document' => $document->load(
