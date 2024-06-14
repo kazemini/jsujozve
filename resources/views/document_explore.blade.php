@@ -30,13 +30,13 @@
                                 <thead>
                                 <tr>
                                     <th class="px-2">نویسنده</th>
-                                    <th class="px-2">ویرایش توسط</th>
+                                    <th class="px-2">ویرایشگر</th>
                                     <th class="px-2">عنوان</th>
                                     <th class="px-2">دانشگاه</th>
                                     <th class="px-2">دانشکده</th>
                                     <th class="px-2">درس</th>
                                     <th class="px-2">استاد</th>
-                                    <th class="px-2">آخرین بروزرسانی</th>
+                                    <th class="px-2">بروزرسانی</th>
                                     <th></th>
                                     <th></th>
                                     <th></th>
@@ -52,19 +52,19 @@
                                         $editor = $log->editor;
                                     @endphp
                                     <tr>
-                                        <td style="text-overflow: ellipsis;overflow: hidden; max-width: 200px"><a
+                                        <td style="text-overflow: ellipsis;overflow: hidden; max-width: 110px"><a
                                                 href=""></a>{{$publisher->name}}</td>
-                                        <td style="text-overflow: ellipsis;overflow: hidden; max-width: 200px"><a
+                                        <td style="text-overflow: ellipsis;overflow: hidden; max-width: 120px"><a
                                                 href=""></a>{{$editor->name}}</td>
-                                        <td style="text-overflow: ellipsis;overflow: hidden; max-width: 160px"><a
+                                        <td style="text-overflow: ellipsis;overflow: hidden; max-width: 140px"><a
                                                 href=""></a>{{$log->title}}</td>
-                                        <td style="text-overflow: ellipsis;overflow: hidden; max-width: 120px"><a
+                                        <td style="text-overflow: ellipsis;overflow: hidden; max-width: 110px"><a
                                                 href=""></a>{{$log->university}}</td>
-                                        <td style="text-overflow: ellipsis;overflow: hidden; max-width: 120px"><a
+                                        <td style="text-overflow: ellipsis;overflow: hidden; max-width: 110px"><a
                                                 href=""></a>{{$log->department}}</td>
                                         <td style="text-overflow: ellipsis;overflow: hidden; max-width: 120px"><a
                                                 href=""></a>{{$log->lesson}}</td>
-                                        <td style="text-overflow: ellipsis;overflow: hidden; max-width: 150px"><a
+                                        <td style="text-overflow: ellipsis;overflow: hidden; max-width: 140px"><a
                                                 href=""></a>{{$log->professor}}</td>
                                         <td>{{$log->created_at->toJalali()->format('Y/m/d')}}</td>
                                         <td>
