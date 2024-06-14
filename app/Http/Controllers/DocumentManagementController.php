@@ -61,7 +61,7 @@ class DocumentManagementController extends Controller
             'editor_id' => $document->author_id,
         ];
 
-        if (!isNull($request['description'])) {
+        if (!isNull($request['newDescription'])) {
             $fields['description'] = $request['newDescription'];
         }
 
