@@ -16,6 +16,7 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="{{url('css/Vazirmatn-FD-font-face.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{url('css/styles.css')}}">
 
     <script src="{{url('assets/js/42d5adcbca.js')}}" crossorigin="anonymous"></script>
 

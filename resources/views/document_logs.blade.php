@@ -45,17 +45,17 @@
                                     @php $editor = $log->editor @endphp
                                     <tr>
                                         <td> {{$log->id}}</td>
-                                        <td style="text-overflow: ellipsis;overflow: hidden; max-width: 150px"><a
+                                        <td class="text-ellipsis" style="max-width: 150px"><a
                                                 href=""></a>{{$editor->name}}</td>
-                                        <td style="text-overflow: ellipsis;overflow: hidden; max-width: 200px"><a
+                                        <td class="text-ellipsis" style="max-width: 200px"><a
                                                 href=""></a>{{$log->title}}</td>
-                                        <td style="text-overflow: ellipsis;overflow: hidden; max-width: 120px"><a
+                                        <td class="text-ellipsis" style="max-width: 120px"><a
                                                 href=""></a>{{$log->university}}</td>
-                                        <td style="text-overflow: ellipsis;overflow: hidden; max-width: 120px"><a
+                                        <td class="text-ellipsis" style="max-width: 120px"><a
                                                 href=""></a>{{$log->department}}</td>
-                                        <td style="text-overflow: ellipsis;overflow: hidden; max-width: 120px"><a
+                                        <td class="text-ellipsis" style="max-width: 120px"><a
                                                 href=""></a>{{$log->lesson}}</td>
-                                        <td style="text-overflow: ellipsis;overflow: hidden; max-width: 120px"><a
+                                        <td class="text-ellipsis" style="max-width: 120px"><a
                                                 href=""></a>{{$log->professor}}</td>
                                         <td>{{$log->created_at->toJalali()}}</td>
                                         <td>

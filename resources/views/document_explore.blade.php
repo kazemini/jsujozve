@@ -54,17 +54,17 @@
                                     <tr>
                                         <td style="text-overflow: ellipsis;overflow: hidden; max-width: 110px"><a
                                                 href=""></a>{{$publisher->name}}</td>
-                                        <td style="text-overflow: ellipsis;overflow: hidden; max-width: 120px"><a
+                                        <td class="text-ellipsis" style="max-width: 120px"><a
                                                 href=""></a>{{$editor->name}}</td>
-                                        <td style="text-overflow: ellipsis;overflow: hidden; max-width: 140px"><a
+                                        <td class="text-ellipsis" style="max-width: 140px"><a
                                                 href=""></a>{{$log->title}}</td>
-                                        <td style="text-overflow: ellipsis;overflow: hidden; max-width: 110px"><a
+                                        <td class="text-ellipsis" style="max-width: 110px"><a
                                                 href=""></a>{{$log->university}}</td>
-                                        <td style="text-overflow: ellipsis;overflow: hidden; max-width: 110px"><a
+                                        <td class="text-ellipsis" style="max-width: 110px"><a
                                                 href=""></a>{{$log->department}}</td>
-                                        <td style="text-overflow: ellipsis;overflow: hidden; max-width: 120px"><a
+                                        <td class="text-ellipsis" style="max-width: 120px"><a
                                                 href=""></a>{{$log->lesson}}</td>
-                                        <td style="text-overflow: ellipsis;overflow: hidden; max-width: 140px"><a
+                                        <td class="text-ellipsis" style="max-width: 140px"><a
                                                 href=""></a>{{$log->professor}}</td>
                                         <td>{{$log->created_at->toJalali()->format('Y/m/d')}}</td>
                                         <td>
