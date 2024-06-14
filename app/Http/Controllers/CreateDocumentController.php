@@ -48,8 +48,8 @@ class CreateDocumentController extends Controller
             'editor_id' => $newDoc->author_id,
         ];
 
-        if (!isNull($requestData['description'])) {
-            $fields['description'] = $requestData['description'];
+        if (!empty($request['description'])) {
+            $fields['description'] = $request['newDescription'];
         }
 
         $newDoc->logs()->create($fields);

@@ -8,7 +8,6 @@ use App\Models\Log;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use PhpParser\Comment\Doc;
-use function PHPUnit\Framework\isNull;
 
 class DocumentManagementController extends Controller
 {
@@ -61,7 +60,7 @@ class DocumentManagementController extends Controller
             'editor_id' => $document->author_id,
         ];
 
-        if (!isNull($request['newDescription'])) {
+        if (!empty($request['newDescription'])) {
             $fields['description'] = $request['newDescription'];
         }
 
