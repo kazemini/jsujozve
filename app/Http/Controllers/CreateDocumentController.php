@@ -49,7 +49,7 @@ class CreateDocumentController extends Controller
         ];
 
         if (!empty($request['description'])) {
-            $fields['description'] = $request['newDescription'];
+            $fields['description'] = $request['description'];
         }
 
         $newDoc->logs()->create($fields);
