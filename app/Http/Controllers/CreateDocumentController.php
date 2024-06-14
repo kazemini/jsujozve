@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Document;
 use App\Models\Log;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Validator;
 
 
 class CreateDocumentController extends Controller
@@ -17,6 +18,17 @@ class CreateDocumentController extends Controller
 
     public function create(Request $request)
     {
+
+        $validated = $request->validate([
+            'title' => 'required|string|min:3|max:100',
+            'description' => 'max:1000',
+            'university' => 'required|string|min:2|max:100',
+            'department' => 'required|string|min:2|max:100',
+            'professor' => 'required|string|min:3|max:100',
+            'lesson' => 'required|string|min:3|max:100',
+            "document" => 'required|mimes:pdf|max:20000',
+        ]);
+
         $requestData = $request->all();
         $fileName = time().'_'.$request->file('document')->getClientOriginalName();
 
@@ -27,7 +39,7 @@ class CreateDocumentController extends Controller
         ]);
         $newDoc->logs()->create([
             'title' => $requestData['title'],
-            'description' => $requestData['description'],
+            'description' => $requestData['description'] ?? 'توضیحات بیشتر ندارد.',
             'university' => $requestData['university'],
             'department' => $requestData['department'],
             'professor' => $requestData['professor'],

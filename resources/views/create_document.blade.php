@@ -27,6 +27,7 @@
                                 <div class="card-header pb-0 p-3">
                                     <h4 class="mb-0">اطلاعات کلی</h4>
                                     <br>
+
                                     <form role="form" method="post" enctype="multipart/form-data" action="{{route('document.create')}}">
                                         @csrf
 
@@ -34,32 +35,37 @@
                                             <label class="form-label">عنوان</label>
                                             <input id="title" name="title" type="text" class="form-control">
                                         </div>
+                                            <p class="text-danger">{{$errors->missing('title') ? '' : 'عنوان اجباری است. حداقل 3، حداکثر 100 حرف'}}</p>
                                         <div class="input-group input-group-outline mb-3">
                                             <label class="form-label">دانشگاه</label>
                                             <input id="university" name="university" type="text" class="form-control">
                                         </div>
+                                        <p class="text-danger">{{$errors->missing('university') ? '' : 'نام دانشگاه اجباری است. حداقل 2، حداکثر 100 حرف'}}</p>
                                         <div class="input-group input-group-outline mb-3">
                                             <label class="form-label">دانشکده</label>
                                             <input id="department" name="department" type="text" class="form-control">
                                         </div>
+                                        <p class="text-danger">{{$errors->missing('department') ? '' : 'نام دانشکده اجباری است. حداقل 2، حداکثر 100 حرف'}}</p>
                                         <div class="input-group input-group-outline mb-3">
                                             <label class="form-label">استاد</label>
                                             <input id="professor" name="professor" type="text" class="form-control">
                                         </div>
+                                        <p class="text-danger">{{$errors->missing('professor') ? '' : 'نام استاد اجباری است. حداقل 3، حداکثر 100 حرف'}}</p>
                                         <div class="input-group input-group-outline mb-3">
                                             <label class="form-label">درس</label>
                                             <input id="lesson" name="lesson" type="text"
                                                    class="form-control">
                                         </div>
+                                        <p class="text-danger">{{$errors->missing('lesson') ? '' : 'نام درس اجباری است. حداقل 3، حداکثر 100 حرف'}}</p>
                                         <div class="input-group input-group-outline input-group-dynamic mb-3">
-                                            <textarea id="description" name="description" class="form-control" placeholder="توضیحات بیشتر" rows="3"></textarea>
+                                            <textarea id="description" name="description" class="form-control" placeholder="توضیحات بیشتر" value="" rows="3"></textarea>
                                         </div>
-
+                                        <p class="text-danger">{{$errors->missing('description') ? '' : 'توضیحات بیشتری اختیاری است. حداکثر 100 حرف'}}</p>
                                         <div class="mb-3">
                                             <label for="document" class="form-label text-bold">فایل جزوه را اینجا قرار دهید</label>
                                             <input id="document" name="document" class="form-control" type="file">
                                         </div>
-
+                                        <p class="text-danger">{{$errors->missing('document') ? '' : 'فایل جزوه اجباری است. حداکثر 20MB'}}</p>
 
 
                                         <div class="text-center">
