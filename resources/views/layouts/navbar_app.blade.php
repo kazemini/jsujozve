@@ -15,6 +15,8 @@
         href={{url('assets/css/all.min.css')}}
         rel="stylesheet">
 
+    <link rel="stylesheet" href="{{url('css/Vazirmatn-FD-font-face.css')}}" type="text/css">
+
     <script src="{{url('assets/js/42d5adcbca.js')}}" crossorigin="anonymous"></script>
 
     <link href="{{url('assets/css/icon-1.css')}}"
@@ -36,7 +38,7 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <link href="{{url('assets/css/material-dashboard.min-1.css')}}" rel="stylesheet">
 </head>
-<body class="rtl g-sidenav-show bg-gray-200">
+<body class="rtl g-sidenav-show bg-gray-200" style="font-family: Vazirmatn FD,sans-serif">
 <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-end me-3 rotate-caret  bg-gradient-dark"
        id="sidenav-main">
     <div class="sidenav-header">

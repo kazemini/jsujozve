@@ -11,6 +11,8 @@
         href={{url('assets/css/nucleo-svg-1.css')}}
         rel="stylesheet">
 
+    <link rel="stylesheet" href="{{url('css/Vazirmatn-FD-font-face.css')}}" type="text/css">
+
     <script src="{{url('assets/js/42d5adcbca.js')}}" crossorigin="anonymous"></script>
 
     <link href="{{url('assets/icon-1?family=Material+Icons+Round')}}"
@@ -32,7 +34,7 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <link href="{{url('assets/css/material-dashboard.min-1.css')}}" rel="stylesheet">
 </head>
-<body class="rtl">
+<body class="rtl" style="font-family: Vazirmatn FD,sans-serif">
     <div id="app">
         <main class="main-content  mt-0">
             @yield('content')
