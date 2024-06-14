@@ -93,7 +93,7 @@
             </li>
 
             <li class="nav-item">
-                <a href="#applicationsExamples" class="nav-link text-white">
+                <a href="{{route('bookmarks')}}" class="nav-link text-white">
                     <i class="fa-duotone fa-thumbs-up"></i>
                     <span class="nav-link-text me-1">جزوه‌های پسندیده شده</span>
                 </a>
