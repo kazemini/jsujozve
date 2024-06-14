@@ -7,6 +7,7 @@ use App\Models\Document;
 use App\Models\Log;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Validator;
+use function PHPUnit\Framework\isNull;
 
 
 class CreateDocumentController extends Controller
@@ -37,15 +38,21 @@ class CreateDocumentController extends Controller
             'download_link' => $path,
             'author_id' => auth()->user()->id,
         ]);
-        $newDoc->logs()->create([
+
+$fields =  [
             'title' => $requestData['title'],
-            'description' => $requestData['description'] ?? 'توضیحات بیشتر ندارد.',
             'university' => $requestData['university'],
             'department' => $requestData['department'],
             'professor' => $requestData['professor'],
             'lesson' => $requestData['lesson'],
             'editor_id' => $newDoc->author_id,
-        ]);
+        ];
+
+        if(!isNull($requestData['description'])) {
+            $fields['description'] = $requestData['description'];
+        }
+
+        $newDoc->logs()->create($fields);
 
         return redirect()->back()->with('status','با موفقیت ایجاد شد ;)');
     }
