@@ -60,7 +60,7 @@
                                         <div class="input-group input-group-outline input-group-dynamic mb-3">
                                             <textarea id="description" name="description" class="form-control" placeholder="توضیحات بیشتر" value="" rows="3"></textarea>
                                         </div>
-                                        <p class="text-danger">{{$errors->missing('description') ? '' : 'توضیحات بیشتری اختیاری است. حداکثر 100 حرف'}}</p>
+                                        <p class="text-danger">{{$errors->missing('description') ? '' : 'توضیحات بیشتر اختیاری است. حداکثر 100 حرف'}}</p>
                                         <div class="mb-3">
                                             <label for="document" class="form-label text-bold">فایل جزوه را اینجا قرار دهید</label>
                                             <input id="document" name="document" class="form-control" type="file">
