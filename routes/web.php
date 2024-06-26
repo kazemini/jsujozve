@@ -3,6 +3,7 @@
 use App\Http\Controllers\CreateDocumentController;
 use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\DocumentManagementController;
+use App\Http\Controllers\ForumController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\CheckAuthor;
 use Illuminate\Support\Facades\Auth;
@@ -33,6 +34,12 @@ Route::get('/document/{document}/public-edit', [DocumentController::class, 'edit
 Route::post('/document/{document}/public-update', [DocumentController::class, 'update'])->name('document.public-update')->middleware(['auth']);
 
 Route::get('/bookmarks', [DocumentController::class, 'bookmarks'])->name('bookmarks')->middleware(['auth']);
+
+
+
+Route::get('/forum/create', [ForumController::class, 'create'])->name('forum.create')->middleware('auth');
+Route::get('/forum/index', [ForumController::class, 'index'])->name('forum.management')->middleware('auth');
+Route::post('/forum/store', [ForumController::class, 'store'])->name('forum.store')->middleware('auth');
 
 
 Route::get('/test', function () {
