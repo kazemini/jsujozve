@@ -105,106 +105,23 @@
                     <span class="nav-link-text me-1">کاوش در جزوه‌ها</span>
                 </a>
             </li>
+
             <li class="nav-item">
                 <hr class="horizontal light">
                 <h6 class="ps-4 me-4 text-uppercase text-lg font-weight-bolder text-white">انجمن</h6>
             </li>
+
             <li class="nav-item">
-                <a data-bs-toggle="collapse" href="#basicExamples" class="nav-link text-white "
-                   aria-controls="basicExamples" role="button" aria-expanded="false">
-                    <i class="material-icons-round {% if page.brand == 'RTL' %}ms-2{% else %} me-2{% endif %}">upcoming</i>
+                <a class="nav-link" href="{{route('forum.create')}}">
+                    <i class="fa-duotone fa-people-group"></i>
+                    <span class="nav-link-text me-1">ایجاد انجمن‌ جدید</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('forum.management')}}">
+                    <i class="fa-duotone fa-people-roof"></i>
                     <span class="nav-link-text me-1">مدیریت انجمن‌ها</span>
                 </a>
-                <div class="collapse " id="basicExamples">
-                    <ul class="nav  pe-0 ">
-                        <li class="nav-item ">
-                            <a class="nav-link text-white " data-bs-toggle="collapse" aria-expanded="false"
-                               href="#gettingStartedExample">
-                                <span class="sidenav-mini-icon"> G </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Getting Started <b class="caret"></b></span>
-                            </a>
-                            <div class="collapse " id="gettingStartedExample">
-                                <ul class="nav nav-sm flex-column">
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white "
-                                           href="https://www.creative-tim.com/learning-lab/bootstrap/quick-start/material-dashboard"
-                                           target="_blank">
-                                            <span class="sidenav-mini-icon"> Q </span>
-                                            <span class="sidenav-normal  me-3  ps-1"> Quick Start </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white "
-                                           href="https://www.creative-tim.com/learning-lab/bootstrap/license/material-dashboard"
-                                           target="_blank">
-                                            <span class="sidenav-mini-icon"> L </span>
-                                            <span class="sidenav-normal  me-3  ps-1"> License </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white "
-                                           href="https://www.creative-tim.com/learning-lab/bootstrap/overview/material-dashboard"
-                                           target="_blank">
-                                            <span class="sidenav-mini-icon"> C </span>
-                                            <span class="sidenav-normal  me-3  ps-1"> Contents </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white "
-                                           href="https://www.creative-tim.com/learning-lab/bootstrap/build-tools/material-dashboard"
-                                           target="_blank">
-                                            <span class="sidenav-mini-icon"> B </span>
-                                            <span class="sidenav-normal  me-3  ps-1"> Build Tools </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-white " data-bs-toggle="collapse" aria-expanded="false"
-                               href="#foundationExample">
-                                <span class="sidenav-mini-icon"> F </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Foundation <b class="caret"></b></span>
-                            </a>
-                            <div class="collapse " id="foundationExample">
-                                <ul class="nav nav-sm flex-column">
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white "
-                                           href="https://www.creative-tim.com/learning-lab/bootstrap/colors/material-dashboard"
-                                           target="_blank">
-                                            <span class="sidenav-mini-icon"> C </span>
-                                            <span class="sidenav-normal  me-3  ps-1"> Colors </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white "
-                                           href="https://www.creative-tim.com/learning-lab/bootstrap/grid/material-dashboard"
-                                           target="_blank">
-                                            <span class="sidenav-mini-icon"> G </span>
-                                            <span class="sidenav-normal  me-3  ps-1"> Grid </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white "
-                                           href="https://www.creative-tim.com/learning-lab/bootstrap/typography/material-dashboard"
-                                           target="_blank">
-                                            <span class="sidenav-mini-icon"> T </span>
-                                            <span class="sidenav-normal  me-3  ps-1"> Typography </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white "
-                                           href="https://www.creative-tim.com/learning-lab/bootstrap/icons/material-dashboard"
-                                           target="_blank">
-                                            <span class="sidenav-mini-icon"> I </span>
-                                            <span class="sidenav-normal  me-3  ps-1"> Icons </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
             </li>
             <li class="nav-item">
                 <a data-bs-toggle="collapse" href="#componentsExamples" class="nav-link text-white "
