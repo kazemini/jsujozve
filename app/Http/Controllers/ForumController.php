@@ -71,8 +71,9 @@ class ForumController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Forum $forum)
     {
-        //
+        $forum->delete();
+        return redirect()->back()->with('status', 'با موفقیت حذف شد ;)');
     }
 }
