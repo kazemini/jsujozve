@@ -39,8 +39,9 @@ Route::get('/bookmarks', [DocumentController::class, 'bookmarks'])->name('bookma
 Route::get('/forum/index', [ForumController::class, 'index'])->name('forum.management')->middleware('auth');
 Route::get('/forum/create', [ForumController::class, 'create'])->name('forum.create')->middleware('auth');
 Route::post('/forum/store', [ForumController::class, 'store'])->name('forum.store')->middleware('auth');
-Route::get('/forum/edit/{forum}', [ForumController::class, 'edit'])->name('forum.edit')->middleware('auth');
-Route::post('/forum/update/{forum}', [ForumController::class, 'update'])->name('forum.update')->middleware('auth');
+Route::get('/forum/edit/{forum}', [ForumController::class, 'edit'])->name('forum.edit')->middleware('auth')->middleware(['auth', 'can:manage-forum,forum']);
+Route::post('/forum/update/{forum}', [ForumController::class, 'update'])->name('forum.update')->middleware(['auth', 'can:manage-forum,forum']);
+Route::delete('/forum/{forum}', [ForumController::class, 'destroy'])->name('forum.delete')->middleware(['auth', 'can:manage-forum,forum']);
 
 
 Route::get('/test', function () {
