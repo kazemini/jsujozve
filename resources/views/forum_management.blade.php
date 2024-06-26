@@ -57,9 +57,11 @@
                                             </a>
                                         </td>
                                         <td class="text-center">
-                                            <a href="">
-                                                <i class="text-3xl fa-duotone fa-trash text-danger"></i>
-                                            </a>
+                                            <form action="{{route('forum.delete',['forum'=> $forum])}}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <i class="text-3xl fa-duotone fa-trash text-danger cursor-pointer" onclick="event.preventDefault();this.closest('form').submit();"></i>
+                                            </form>
                                         </td>
                                         <div class="modal fade" id="exampleModal{{$forum->id}}"
                                              data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
