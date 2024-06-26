@@ -53,9 +53,19 @@ class ForumController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Forum $forum)
     {
-        //
+        $validated = $request->validate([
+            'title' => 'required|string|min:3|max:100',
+            'description' => 'required|string|max:1000',
+        ]);
+
+        $forum->title = $request->title;
+        $forum->description = $request->description;
+
+        $forum->save();
+
+        return redirect()->back()->with('status', 'با موفقیت بروزرسانی شد ;)');
     }
 
     /**
