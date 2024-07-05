@@ -10,9 +10,8 @@ use Illuminate\Support\Facades\Redirect;
 
 class PostController extends Controller
 {
-    public function index(Request $request)
+    public function index(Forum $forum)
     {
-        $forum = Forum::where('id', $request->forum)->first();
         return view('post_management', ['posts' => Post::where('forum_id', $forum->id)->orderBy('updated_at', 'desc')->simplePaginate(3), 'forum' => $forum]);
     }
 

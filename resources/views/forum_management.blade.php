@@ -45,7 +45,6 @@
                                                 href=""></a>{{$forum->title}}</td>
                                         <td class="text-center">
                                             <form action="{{route('post.management',['forum'=> $forum])}}" method="get">
-                                                <input type="hidden" name="forum" value="{{$forum->id}}">
                                                 @csrf
                                                 <i class="text-3xl fa-brands fa-twitter text-success cursor-pointer" onclick="event.preventDefault();this.closest('form').submit();"></i>
                                             </form>
