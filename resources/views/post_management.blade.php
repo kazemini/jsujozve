@@ -70,7 +70,7 @@
                                         <td class="text-center">{{$post->updated_at->toJalali()->format('Y/m/d')}}</td>
 
                                         <td class="text-center">
-                                            <i class="text-3xl fa-duotone fa-subtitles text-info cursor-pointer" data-bs-toggle=modal data-bs-target="#exampleModal{{$forum->id}}"></i>
+                                            <i class="text-3xl fa-duotone fa-subtitles text-info cursor-pointer" data-bs-toggle=modal data-bs-target="#exampleModal{{$post->id}}"></i>
                                         </td>
                                         <td class="text-center">
                                             <a href="">
@@ -84,7 +84,7 @@
                                                 <i class="text-3xl fa-duotone fa-trash text-danger cursor-pointer" onclick="event.preventDefault();this.closest('form').submit();"></i>
                                             </form>
                                         </td>
-                                        <div class="modal fade" id="exampleModal{{$forum->id}}"
+                                        <div class="modal fade" id="exampleModal{{$post->id}}"
                                              data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
                                              aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                             <div class="modal-dialog">
