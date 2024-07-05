@@ -44,7 +44,7 @@ Route::get('/forum/edit/{forum}', [ForumController::class, 'edit'])->name('forum
 Route::post('/forum/update/{forum}', [ForumController::class, 'update'])->name('forum.update')->middleware(['auth', 'can:manage-forum,forum']);
 Route::delete('/forum/{forum}', [ForumController::class, 'destroy'])->name('forum.delete')->middleware(['auth', 'can:manage-forum,forum']);
 
-Route::get('/posts/{forum}', [PostController::class, 'index'])->name('post.management')->middleware(['auth']);
+Route::get('/posts/{forum}', [PostController::class, 'index'])->name('post.management')->middleware(['auth', 'can:manage-post,forum']);
 Route::post('/posts/store/{forum}', [PostController::class, 'store'])->name('post.store')->middleware(['auth', 'can:manage-post,forum']);
 
 
