@@ -73,7 +73,7 @@
                                             <i class="text-3xl fa-duotone fa-subtitles text-info cursor-pointer" data-bs-toggle=modal data-bs-target="#exampleModal{{$post->id}}"></i>
                                         </td>
                                         <td class="text-center">
-                                            <a href="">
+                                            <a href="{{route('post.edit',['forum'=>$forum,'post'=>$post])}}">
                                                 <i class="text-3xl fa-duotone fa-edit text-secondary"></i>
                                             </a>
                                         </td>

@@ -35,17 +35,25 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Post $post)
+    public function edit(Forum $forum, Post $post)
     {
-
+        return view('post_edit', ['forum' => $forum, 'post' => $post]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Forum $forum, Post $post)
     {
-        //
+        $validated = $request->validate([
+            'post_content' => 'required|string|max:1000',
+        ]);
+
+        $post->content = $request->post_content;
+
+        $post->save();
+
+        return redirect()->route('post.management', ['forum' => $forum])->with(["status" => "با موفقیت ویرایش شد"]);
     }
 
     /**
