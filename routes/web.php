@@ -4,6 +4,7 @@ use App\Http\Controllers\CreateDocumentController;
 use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\DocumentManagementController;
 use App\Http\Controllers\ForumController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\CheckAuthor;
 use Illuminate\Support\Facades\Auth;
@@ -42,6 +43,10 @@ Route::post('/forum/store', [ForumController::class, 'store'])->name('forum.stor
 Route::get('/forum/edit/{forum}', [ForumController::class, 'edit'])->name('forum.edit')->middleware('auth')->middleware(['auth', 'can:manage-forum,forum']);
 Route::post('/forum/update/{forum}', [ForumController::class, 'update'])->name('forum.update')->middleware(['auth', 'can:manage-forum,forum']);
 Route::delete('/forum/{forum}', [ForumController::class, 'destroy'])->name('forum.delete')->middleware(['auth', 'can:manage-forum,forum']);
+
+Route::get('/posts/{forum}', [PostController::class, 'index'])->name('post.management')->middleware(['auth']);
+Route::post('/posts/store/{forum}', [PostController::class, 'store'])->name('post.store')->middleware(['auth', 'can:manage-post,forum']);
+
 
 
 Route::get('/test', function () {
