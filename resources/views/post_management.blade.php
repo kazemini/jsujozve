@@ -78,7 +78,7 @@
                                             </a>
                                         </td>
                                         <td class="text-center">
-                                            <form action="" method="POST">
+                                            <form action="{{route('post.delete',['forum'=>$forum,'post' => $post])}}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <i class="text-3xl fa-duotone fa-trash text-danger cursor-pointer" onclick="event.preventDefault();this.closest('form').submit();"></i>
