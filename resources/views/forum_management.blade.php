@@ -43,10 +43,12 @@
                                         <td> {{$forum->id}} </td>
                                         <td class="text-ellipsis" style="max-width: 200px"><a
                                                 href=""></a>{{$forum->title}}</td>
-                                        <td class="text-center" class="text-center">
-                                            <a href="">
-                                                <i class="text-3xl fa-brands fa-twitter text-success"></i>
-                                            </a>
+                                        <td class="text-center">
+                                            <form action="{{route('post.management',['forum'=> $forum])}}" method="get">
+                                                <input type="hidden" name="forum" value="{{$forum->id}}">
+                                                @csrf
+                                                <i class="text-3xl fa-brands fa-twitter text-success cursor-pointer" onclick="event.preventDefault();this.closest('form').submit();"></i>
+                                            </form>
                                         </td>
                                         <td class="text-center">
                                             <i class="text-3xl fa-duotone fa-subtitles text-info cursor-pointer" data-bs-toggle=modal data-bs-target="#exampleModal{{$forum->id}}"></i>
