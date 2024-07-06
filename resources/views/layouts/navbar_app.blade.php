@@ -124,151 +124,18 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a data-bs-toggle="collapse" href="#componentsExamples" class="nav-link text-white "
-                   aria-controls="componentsExamples" role="button" aria-expanded="false">
-                    <i class="material-icons-round {% if page.brand == 'RTL' %}ms-2{% else %} me-2{% endif %}">view_in_ar</i>
+                <a class="nav-link"
+                   href="https://github.com/creativetimofficial/ct-material-dashboard-pro/blob/master/CHANGELOG.md"
+                   target="_blank">
+                    <i class="fa-duotone fa-people-pulling"></i>
                     <span class="nav-link-text me-1">انجمن‌های دنبال شده</span>
                 </a>
-                <div class="collapse " id="componentsExamples">
-                    <ul class="nav  pe-0 ">
-                        <li class="nav-item ">
-                            <a class="nav-link text-white "
-                               href="https://www.creative-tim.com/learning-lab/bootstrap/alerts/material-dashboard"
-                               target="_blank">
-                                <span class="sidenav-mini-icon"> A </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Alerts </span>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-white "
-                               href="https://www.creative-tim.com/learning-lab/bootstrap/badge/material-dashboard"
-                               target="_blank">
-                                <span class="sidenav-mini-icon"> B </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Badge </span>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-white "
-                               href="https://www.creative-tim.com/learning-lab/bootstrap/buttons/material-dashboard"
-                               target="_blank">
-                                <span class="sidenav-mini-icon"> B </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Buttons </span>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-white "
-                               href="https://www.creative-tim.com/learning-lab/bootstrap/cards/material-dashboard"
-                               target="_blank">
-                                <span class="sidenav-mini-icon"> C </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Card </span>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-white "
-                               href="https://www.creative-tim.com/learning-lab/bootstrap/carousel/material-dashboard"
-                               target="_blank">
-                                <span class="sidenav-mini-icon"> C </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Carousel </span>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-white "
-                               href="https://www.creative-tim.com/learning-lab/bootstrap/collapse/material-dashboard"
-                               target="_blank">
-                                <span class="sidenav-mini-icon"> C </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Collapse </span>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-white "
-                               href="https://www.creative-tim.com/learning-lab/bootstrap/dropdowns/material-dashboard"
-                               target="_blank">
-                                <span class="sidenav-mini-icon"> D </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Dropdowns </span>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-white "
-                               href="https://www.creative-tim.com/learning-lab/bootstrap/forms/material-dashboard"
-                               target="_blank">
-                                <span class="sidenav-mini-icon"> F </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Forms </span>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-white "
-                               href="https://www.creative-tim.com/learning-lab/bootstrap/modal/material-dashboard"
-                               target="_blank">
-                                <span class="sidenav-mini-icon"> M </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Modal </span>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-white "
-                               href="https://www.creative-tim.com/learning-lab/bootstrap/navs/material-dashboard"
-                               target="_blank">
-                                <span class="sidenav-mini-icon"> N </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Navs </span>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-white "
-                               href="https://www.creative-tim.com/learning-lab/bootstrap/navbar/material-dashboard"
-                               target="_blank">
-                                <span class="sidenav-mini-icon"> N </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Navbar </span>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-white "
-                               href="https://www.creative-tim.com/learning-lab/bootstrap/pagination/material-dashboard"
-                               target="_blank">
-                                <span class="sidenav-mini-icon"> P </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Pagination </span>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-white "
-                               href="https://www.creative-tim.com/learning-lab/bootstrap/popovers/material-dashboard"
-                               target="_blank">
-                                <span class="sidenav-mini-icon"> P </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Popovers </span>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-white "
-                               href="https://www.creative-tim.com/learning-lab/bootstrap/progress/material-dashboard"
-                               target="_blank">
-                                <span class="sidenav-mini-icon"> P </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Progress </span>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-white "
-                               href="https://www.creative-tim.com/learning-lab/bootstrap/spinners/material-dashboard"
-                               target="_blank">
-                                <span class="sidenav-mini-icon"> S </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Spinners </span>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-white "
-                               href="https://www.creative-tim.com/learning-lab/bootstrap/tables/material-dashboard"
-                               target="_blank">
-                                <span class="sidenav-mini-icon"> T </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Tables </span>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-white "
-                               href="https://www.creative-tim.com/learning-lab/bootstrap/tooltips/material-dashboard"
-                               target="_blank">
-                                <span class="sidenav-mini-icon"> T </span>
-                                <span class="sidenav-normal  me-3  ps-1"> Tooltips </span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('forum.explore')}}">
+                    <i class="fa-duotone fa-telescope"></i>
+                    <span class="nav-link-text me-1">کاوش در انجمن‌ها</span>
+                </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link"
@@ -281,7 +148,7 @@
             <li class="nav-item">
                 <hr class="horizontal light">
                 <a class="nav-link"
-                   href="https://github.com/creativetimofficial/ct-material-dashboard-pro/blob/master/CHANGELOG.md"
+                   href="https://ifteam.ir"
                    target="_blank">
                     <i class="fa-duotone fa-gingerbread-man"></i>
                     <span class="nav-link-text me-1">طراحی توسط علی کاظمینی</span>
