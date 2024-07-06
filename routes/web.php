@@ -40,16 +40,18 @@ Route::get('/bookmarks', [DocumentController::class, 'bookmarks'])->name('bookma
 Route::get('/forum/index', [ForumController::class, 'index'])->name('forum.management')->middleware('auth');
 Route::get('/forum/create', [ForumController::class, 'create'])->name('forum.create')->middleware('auth');
 Route::post('/forum/store', [ForumController::class, 'store'])->name('forum.store')->middleware('auth');
-Route::get('/forum/edit/{forum}', [ForumController::class, 'edit'])->name('forum.edit')->middleware('auth')->middleware(['auth', 'can:manage-forum,forum']);
+Route::get('/forum/edit/{forum}', [ForumController::class, 'edit'])->name('forum.edit')->middleware(['auth', 'can:manage-forum,forum']);
 Route::post('/forum/update/{forum}', [ForumController::class, 'update'])->name('forum.update')->middleware(['auth', 'can:manage-forum,forum']);
 Route::delete('/forum/{forum}', [ForumController::class, 'destroy'])->name('forum.delete')->middleware(['auth', 'can:manage-forum,forum']);
+Route::get('/forum/explore', [ForumController::class, 'explore'])->name('forum.explore')->middleware('auth');
+Route::post('/forum/{forum}/subscribe', [ForumController::class, 'subscribe'])->name('forum.subscribe')->middleware(['auth', 'can:subscribe,forum']);
+
 
 Route::get('/posts/{forum}', [PostController::class, 'index'])->name('post.management')->middleware(['auth', 'can:manage-forum,forum']);
 Route::post('/posts/store/{forum}', [PostController::class, 'store'])->name('post.store')->middleware(['auth', 'can:manage-forum,forum']);
 Route::get('/posts/edit/{forum}/{post}', [PostController::class, 'edit'])->name('post.edit')->middleware(['auth', 'can:manage-post,forum,post']);
 Route::post('/posts/update/{forum}/{post}', [PostController::class, 'update'])->name('post.update')->middleware(['auth', 'can:manage-post,forum,post']);
 Route::delete('/posts/delete/{forum}/{post}', [PostController::class, 'destroy'])->name('post.delete')->middleware(['auth', 'can:manage-post,forum,post']);
-
 
 
 Route::get('/test', function () {
