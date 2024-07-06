@@ -35,5 +35,9 @@ class AppServiceProvider extends ServiceProvider
         Gate::define('manage-post', function (User $user, Forum $forum, Post $post) {
             return $user->id === $forum->admin_id && $post->forum_id === $forum->id;
         });
+
+        Gate::define('subscribe', function (User $user, Forum $forum) {
+            return $user->id !== $forum->admin_id;
+        });
     }
 }
