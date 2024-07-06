@@ -10,7 +10,9 @@ class ForumController extends Controller
 {
     public function index()
     {
-        return view('forum_management', ['forums' => Forum::where('admin_id',auth()->user()->id)->simplePaginate(10)]);
+        return view('forum_management', [
+            'forums' => Forum::with('subscribers')->where('admin_id', auth()->user()->id)->simplePaginate(10)
+        ]);
     }
 
     public function create()

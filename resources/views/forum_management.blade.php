@@ -33,6 +33,7 @@
                                     <th class="px-2">عنوان</th>
                                     <th class="text-center">پست جدید</th>
                                     <th class="text-center">توضیحات انجمن</th>
+                                    <th class="text-center">دنبال کننده ها</th>
                                     <th class="text-center">ویرایش انجمن</th>
                                     <th class="text-center">حذف انجمن</th>
                                 </tr>
@@ -51,6 +52,9 @@
                                         </td>
                                         <td class="text-center">
                                             <i class="text-3xl fa-duotone fa-subtitles text-info cursor-pointer" data-bs-toggle=modal data-bs-target="#exampleModal{{$forum->id}}"></i>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="text-center text-info btn btn-outline-info" data-bs-toggle=modal data-bs-target="#exampleModal2{{$forum->id}}">{{$forum->subscribers->count()}}</div>
                                         </td>
                                         <td class="text-center">
                                             <a href="{{route('forum.edit',['forum' => $forum])}}">
@@ -77,6 +81,32 @@
                                                     <div class="modal-body">
                                                         <p>{{$forum->description}}
                                                         </p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-primary"
+                                                                data-bs-dismiss="modal">متوجه شدم
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal fade" id="exampleModal2{{$forum->id}}"
+                                             data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                                             aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="staticBackdropLabel">دنبال کننده ها</h5>
+                                                        <button type="button" class="btn-close"
+                                                                data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        @php
+                                                        $subscribers = $forum->subscribers;
+                                                        @endphp
+                                                        @foreach($subscribers as $subscriber)
+                                                        <p>{{$subscriber->user->name}}</p>
+                                                        @endforeach
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-primary"
