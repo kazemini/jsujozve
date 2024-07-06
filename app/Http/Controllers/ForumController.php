@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\follow;
 use App\Models\Forum;
 use Illuminate\Http\Request;
 
@@ -68,6 +69,27 @@ class ForumController extends Controller
         $forum->save();
 
         return redirect()->back()->with('status', 'با موفقیت بروزرسانی شد ;)');
+    }
+
+    public function explore()
+    {
+        return view('forum_explore', ['forums' => Forum::with(['admin', 'subscribed'])->withCount('subscribers')->orderBy('created_at', 'desc')->simplePaginate(5)]);
+    }
+
+    public function subscribe(Forum $forum)
+    {
+        $subscribe = Follow::where('user_id', auth()->user()->id)->where('forum_id', $forum->id)->get();
+
+        if ($subscribe->isEmpty()) {
+            Follow::create([
+                'user_id' => auth()->user()->id,
+                'forum_id' => $forum->id,
+            ]);
+        } else {
+            $subscribe->first()->delete();
+        }
+
+        return redirect()->back();
     }
 
     /**
