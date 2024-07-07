@@ -20,7 +20,7 @@ class follow extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function document(): BelongsTo
+    public function forum(): BelongsTo
     {
         return $this->belongsTo(Forum::class);
     }
