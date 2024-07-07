@@ -58,7 +58,7 @@
                                             <i class="text-3xl fa-duotone fa-subtitles text-info cursor-pointer" data-bs-toggle=modal data-bs-target="#exampleModal{{$forum->id}}"></i>
                                         </td>
                                         <td class="text-center">
-                                            <form action="" method="POST">
+                                            <form action="{{route('forum.subscribe',['forum'=>$forum])}}" method="POST">
                                                 @csrf
                                                 <i class="text-3xl fa-duotone fa-minus text-danger cursor-pointer" onclick="event.preventDefault();this.closest('form').submit();"></i>
                                             </form>
