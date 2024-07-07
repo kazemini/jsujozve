@@ -92,6 +92,11 @@ class ForumController extends Controller
         return redirect()->back();
     }
 
+    public function subscribed()
+    {
+        $forums = Forum::whereHas('subscribed', function ($query) {$query->where('user_id', auth()->user()->id);});
+        return view('forum_subscribed', ['forums' => $forums->simplePaginate(10)]);
+    }
     /**
      * Remove the specified resource from storage.
      */

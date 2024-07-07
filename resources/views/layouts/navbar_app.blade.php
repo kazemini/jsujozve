@@ -125,7 +125,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link"
-                   href="https://github.com/creativetimofficial/ct-material-dashboard-pro/blob/master/CHANGELOG.md"
+                   href="{{route('forum.subscribed')}}"
                    target="_blank">
                     <i class="fa-duotone fa-people-pulling"></i>
                     <span class="nav-link-text me-1">انجمن‌های دنبال شده</span>

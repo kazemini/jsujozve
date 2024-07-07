@@ -44,6 +44,7 @@ Route::post('/forum/update/{forum}', [ForumController::class, 'update'])->name('
 Route::delete('/forum/{forum}', [ForumController::class, 'destroy'])->name('forum.delete')->middleware(['auth', 'can:manage-forum,forum']);
 Route::get('/forum/explore', [ForumController::class, 'explore'])->name('forum.explore')->middleware('auth');
 Route::post('/forum/{forum}/subscribe', [ForumController::class, 'subscribe'])->name('forum.subscribe')->middleware(['auth', 'can:subscribe,forum']);
+Route::get('/forum/subscribed', [ForumController::class, 'subscribed'])->name('forum.subscribed')->middleware('auth');
 
 
 Route::get('/posts/{forum}', [PostController::class, 'index'])->name('post.management')->middleware(['auth', 'can:manage-forum,forum']);
