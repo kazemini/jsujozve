@@ -105,7 +105,7 @@
                                                         $subscribers = $forum->subscribers;
                                                         @endphp
                                                         @foreach($subscribers as $subscriber)
-                                                        <p>{{$subscriber->user->name}}</p>
+                                                        <p>{{$subscriber->name}}</p>
                                                         @endforeach
                                                     </div>
                                                     <div class="modal-footer">
