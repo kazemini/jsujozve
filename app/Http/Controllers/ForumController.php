@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\follow;
 use App\Models\Forum;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class ForumController extends Controller
@@ -94,9 +95,18 @@ class ForumController extends Controller
 
     public function subscribed()
     {
-        $forums = Forum::whereHas('subscribed', function ($query) {$query->where('user_id', auth()->user()->id);});
+        $forums = Forum::whereHas('subscribed', function ($query) {
+            $query->where('user_id', auth()->user()->id);
+        });
         return view('forum_subscribed', ['forums' => $forums->simplePaginate(10)]);
     }
+
+    public function posts(Forum $forum)
+    {
+        $posts = Post::where('forum_id', $forum->id)->orderBy('updated_at', 'desc');
+        return view('forum_post', ['forum' => $forum, 'posts' => $posts->simplePaginate(10)]);
+    }
+
     /**
      * Remove the specified resource from storage.
      */

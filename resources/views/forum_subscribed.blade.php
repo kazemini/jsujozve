@@ -43,7 +43,7 @@
                                         <td> {{$forum->id}} </td>
                                         <td class="text-ellipsis" style="max-width: 200px"><a href=""></a>{{$forum->title}}</td>
                                         <td class="text-center">
-                                            <form action="" method="get">
+                                            <form action="{{route('forum.posts',['forum'=>$forum])}}" method="get">
                                                 @csrf
                                                 <i class="text-3xl fa-brands fa-twitter text-success cursor-pointer" onclick="event.preventDefault();this.closest('form').submit();"></i>
                                             </form>
