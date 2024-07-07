@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\follow;
 use App\Models\Forum;
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Symfony\Component\Console\Input\Input;
 
 class PostController extends Controller
 {
@@ -56,9 +59,19 @@ class PostController extends Controller
         return redirect()->route('post.management', ['forum' => $forum])->with(["status" => "با موفقیت ویرایش شد"]);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+    public function explore()
+    {
+        $user = auth()->user();
+
+        $posts = Post::whereHas('forum', function ($query) use ($user) {
+            $query->whereHas('subscribers', function ($query) use ($user) {
+                $query->where('user_id', $user->id);
+            });
+        })->simplePaginate(10);
+
+       return view('post_explore',['posts' => $posts]);
+    }
+
     public function destroy(Forum $forum, Post $post)
     {
         $post->delete();

@@ -50,6 +50,7 @@ Route::post('/posts/store/{forum}', [PostController::class, 'store'])->name('pos
 Route::get('/posts/edit/{forum}/{post}', [PostController::class, 'edit'])->name('post.edit')->middleware(['auth', 'can:manage-post,forum,post']);
 Route::post('/posts/update/{forum}/{post}', [PostController::class, 'update'])->name('post.update')->middleware(['auth', 'can:manage-post,forum,post']);
 Route::delete('/posts/delete/{forum}/{post}', [PostController::class, 'destroy'])->name('post.delete')->middleware(['auth', 'can:manage-post,forum,post']);
+Route::get('/post/explore', [PostController::class, 'explore'])->name('post.explore')->middleware('auth');
 
 
 Route::get('/test', function () {
