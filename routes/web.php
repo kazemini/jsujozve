@@ -46,6 +46,7 @@ Route::get('/forum/explore', [ForumController::class, 'explore'])->name('forum.e
 Route::post('/forum/{forum}/subscribe', [ForumController::class, 'subscribe'])->name('forum.subscribe')->middleware(['auth', 'can:subscribe,forum']);
 Route::get('/forum/subscribed', [ForumController::class, 'subscribed'])->name('forum.subscribed')->middleware('auth');
 Route::get('/forum/posts/{forum}', [ForumController::class, 'posts'])->name('forum.posts')->middleware(['auth']);
+Route::get('/forum/documents/{forum}', [ForumController::class, 'documents'])->name('forum.documents')->middleware(['auth']);
 
 
 Route::get('/posts/{forum}', [PostController::class, 'index'])->name('post.management')->middleware(['auth', 'can:manage-forum,forum']);

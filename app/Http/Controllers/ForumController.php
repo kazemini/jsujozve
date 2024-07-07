@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Document;
 use App\Models\follow;
 use App\Models\Forum;
 use App\Models\Post;
@@ -105,6 +106,29 @@ class ForumController extends Controller
     {
         $posts = Post::where('forum_id', $forum->id)->orderBy('updated_at', 'desc');
         return view('forum_post', ['forum' => $forum, 'posts' => $posts->simplePaginate(10)]);
+    }
+
+    public function documents(Request $request, Forum $forum)
+    {
+        $searchTerm = $request->search ?? '';
+        $documents = Document::with(['logs' => function ($query) {
+            $query->latest('created_at')->take(1);
+        }])->whereHas('forums', function ($query2) use ($forum) {
+            $query2->where('forum_id', $forum->id);
+        })->whereHas('logs', function ($query) use ($searchTerm) {
+            if (!empty($searchTerm)) {
+                $query->where(function ($q) use ($searchTerm) {
+                    $q->where('title', 'like', '%' . $searchTerm . '%')
+                        ->orWhere('description', 'like', '%' . $searchTerm . '%')
+                        ->orWhere('university', 'like', '%' . $searchTerm . '%')
+                        ->orWhere('department', 'like', '%' . $searchTerm . '%')
+                        ->orWhere('professor', 'like', '%' . $searchTerm . '%')
+                        ->orWhere('lesson', 'like', '%' . $searchTerm . '%');
+                });
+            }
+        })->simplePaginate(10);
+
+        return view('forum_document', ['documents' => $documents,'forum'=>$forum]);
     }
 
     /**

@@ -49,7 +49,7 @@
                                             </form>
                                         </td>
                                         <td class="text-center">
-                                            <form action="" method="get">
+                                            <form action="{{route('forum.documents',['forum'=>$forum])}}" method="get">
                                                 @csrf
                                                 <i class="text-3xl fa-duotone fa-file-doc text-warning cursor-pointer" onclick="event.preventDefault();this.closest('form').submit();"></i>
                                             </form>
