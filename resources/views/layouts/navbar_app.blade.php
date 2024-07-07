@@ -124,9 +124,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link"
-                   href="{{route('forum.subscribed')}}"
-                   target="_blank">
+                <a class="nav-link" href="{{route('forum.subscribed')}}">
                     <i class="fa-duotone fa-people-pulling"></i>
                     <span class="nav-link-text me-1">انجمن‌های دنبال شده</span>
                 </a>
