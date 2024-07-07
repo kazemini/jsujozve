@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CreateDocumentController;
 use App\Http\Controllers\DocumentController;
+use App\Http\Controllers\DocumentForumController;
 use App\Http\Controllers\DocumentManagementController;
 use App\Http\Controllers\ForumController;
 use App\Http\Controllers\PostController;
@@ -52,6 +53,10 @@ Route::post('/posts/update/{forum}/{post}', [PostController::class, 'update'])->
 Route::delete('/posts/delete/{forum}/{post}', [PostController::class, 'destroy'])->name('post.delete')->middleware(['auth', 'can:manage-post,forum,post']);
 Route::get('/post/explore', [PostController::class, 'explore'])->name('post.explore')->middleware('auth');
 
+Route::get('/forum-documents/add-document/{forum}', [DocumentForumController::class, 'addDocument'])->name('document-forum.add-document')->middleware(['auth']);
+Route::get('/forum-documents/remove-document/{forum}', [DocumentForumController::class, 'removeDocument'])->name('document-forum.remove-document')->middleware(['auth']);
+Route::post('/forum-documents/attach/{forum}/{document}', [DocumentForumController::class, 'attach'])->name('document-forum.attach')->middleware(['auth', 'can:manage-forum,forum']);
+Route::post('/forum-documents/detach/{forum}/{document}', [DocumentForumController::class, 'detach'])->name('document-forum.detach')->middleware(['auth', 'can:manage-forum,forum']);
 
 Route::get('/test', function () {
     return view('overview');

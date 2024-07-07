@@ -37,4 +37,9 @@ class Forum extends Model
     {
         return $this->hasMany(Post::class);
     }
+
+    public function documents(): BelongsToMany
+    {
+        return $this->belongsToMany(Document::class);
+    }
 }

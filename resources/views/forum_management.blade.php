@@ -31,9 +31,11 @@
                                 <tr>
                                     <th class="px-2">شناسه</th>
                                     <th class="px-2">عنوان</th>
-                                    <th class="text-center">پست جدید</th>
-                                    <th class="text-center">توضیحات انجمن</th>
+                                    <th class="text-center">پست ها</th>
+                                    <th class="text-center">افزودن جزوه</th>
+                                    <th class="text-center">حذف جزوه</th>
                                     <th class="text-center">دنبال کننده ها</th>
+                                    <th class="text-center">توضیحات انجمن</th>
                                     <th class="text-center">ویرایش انجمن</th>
                                     <th class="text-center">حذف انجمن</th>
                                 </tr>
@@ -51,10 +53,22 @@
                                             </form>
                                         </td>
                                         <td class="text-center">
-                                            <i class="text-3xl fa-duotone fa-subtitles text-info cursor-pointer" data-bs-toggle=modal data-bs-target="#exampleModal{{$forum->id}}"></i>
+                                            <form action="{{route('document-forum.add-document',['forum'=> $forum])}}" method="get">
+                                                @csrf
+                                                <i class="text-3xl fa-duotone fa-file-plus text-warning cursor-pointer" onclick="event.preventDefault();this.closest('form').submit();"></i>
+                                            </form>
+                                        </td>
+                                        <td class="text-center">
+                                            <form action="{{route('document-forum.remove-document',['forum'=> $forum])}}" method="get">
+                                                @csrf
+                                                <i class="text-3xl fa-duotone fa-file-minus text-warning cursor-pointer" onclick="event.preventDefault();this.closest('form').submit();"></i>
+                                            </form>
                                         </td>
                                         <td class="text-center">
                                             <div class="text-center text-info btn btn-outline-info" data-bs-toggle=modal data-bs-target="#exampleModal2{{$forum->id}}">{{$forum->subscribers->count()}}</div>
+                                        </td>
+                                        <td class="text-center">
+                                            <i class="text-3xl fa-duotone fa-subtitles text-info cursor-pointer" data-bs-toggle=modal data-bs-target="#exampleModal{{$forum->id}}"></i>
                                         </td>
                                         <td class="text-center">
                                             <a href="{{route('forum.edit',['forum' => $forum])}}">
