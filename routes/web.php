@@ -10,9 +10,7 @@ use App\Http\Middleware\CheckAuthor;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [ProfileController::class, 'index'])->name('profile')->middleware('auth');
 
 Auth::routes();
 
